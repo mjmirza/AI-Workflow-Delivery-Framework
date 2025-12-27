@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope of Work - Workflow Automation Project</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .document-container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+
+        @page {
+            margin: 1in;
+            size: letter;
+        }
+
+        /* Document Container */
+        .document-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 60px;
+        }
+
+        /* Header Section */
+        .document-header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #2c3e50;
+            margin-bottom: 40px;
+        }
+
+        .company-logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .document-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .document-subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+
+        /* Project Info Box */
+        .project-info-box {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-left: 4px solid #3498db;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+
+        .project-info-box table {
+            width: 100%;
+        }
+
+        .project-info-box td {
+            padding: 8px 0;
+        }
+
+        .project-info-box .label {
+            font-weight: 600;
+            color: #2c3e50;
+            width: 150px;
+        }
+
+        .project-info-box .value {
+            color: #555;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-header {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .section-number {
+            color: #3498db;
+            margin-right: 10px;
+        }
+
+        .subsection-header {
+            font-size: 16px;
+            font-weight: 600;
+            color: #34495e;
+            margin: 20px 0 10px 0;
+        }
+
+        /* Content Styles */
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .placeholder {
+            background-color: #fff3cd;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .checklist li::before {
+            content: "\2610";
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+            color: #3498db;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #e8f4f8;
+        }
+
+        /* Workflow Table */
+        .workflow-table th {
+            background-color: #3498db;
+            width: 150px;
+        }
+
+        .workflow-table td {
+            vertical-align: top;
+        }
+
+        /* Pricing Table */
+        .pricing-table th {
+            background-color: #27ae60;
+        }
+
+        .pricing-table .total-row {
+            background-color: #2c3e50;
+            color: white;
+            font-weight: 700;
+        }
+
+        .pricing-table .total-row td {
+            border-color: #2c3e50;
+        }
+
+        /* Exclusions Box */
+        .exclusions-box {
+            background-color: #fdf2f2;
+            border: 1px solid #f5c6cb;
+            border-left: 4px solid #e74c3c;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .exclusions-box h4 {
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+
+        /* Timeline */
+        .timeline-phase {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .timeline-phase .phase-name {
+            min-width: 120px;
+            font-weight: 600;
+            color: #3498db;
+        }
+
+        /* Signature Section */
+        .signature-section {
+            margin-top: 50px;
+            page-break-inside: avoid;
+        }
+
+        .signature-block {
+            display: inline-block;
+            width: 48%;
+            vertical-align: top;
+            margin-bottom: 30px;
+        }
+
+        .signature-block:first-child {
+            margin-right: 4%;
+        }
+
+        .signature-block h4 {
+            font-size: 18px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .signature-line {
+            margin-bottom: 15px;
+        }
+
+        .signature-line label {
+            display: block;
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .signature-line .line {
+            border-bottom: 1px solid #333;
+            height: 30px;
+        }
+
+        /* Footer */
+        .document-footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        /* Notes and Callouts */
+        .note {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .important {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        /* Appendix */
+        .appendix {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px dashed #ddd;
+        }
+
+        .appendix h3 {
+            color: #7f8c8d;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="document-container">
+        <!-- Header -->
+        <header class="document-header">
+            <!-- Company Logo Placeholder -->
+            <div class="company-logo-placeholder">
+                <img src="logo.png" alt="Company Logo" class="company-logo" onerror="this.style.display='none'">
+            </div>
+            <h1 class="document-title">Scope of Work</h1>
+            <p class="document-subtitle">Workflow Automation Project</p>
+        </header>
+
+        <!-- Project Info Box -->
+        <div class="project-info-box">
+            <table>
+                <tr>
+                    <td class="label">Project:</td>
+                    <td class="value"><span class="placeholder">[PROJECT NAME]</span></td>
+                </tr>
+                <tr>
+                    <td class="label">Client:</td>
+                    <td class="value"><span class="placeholder">[CLIENT COMPANY]</span></td>
+                </tr>
+                <tr>
+                    <td class="label">Date:</td>
+                    <td class="value"><span class="placeholder">[DATE]</span></td>
+                </tr>
+                <tr>
+                    <td class="label">Version:</td>
+                    <td class="value">1.0</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Section 1: Project Overview -->
+        <section class="section">
+            <h2 class="section-header"><span class="section-number">1.</span>Project Overview</h2>
+
+            <h3 class="subsection-header">1.1 Background</h3>
+            <p><span class="placeholder">[2-3 sentences about the client's business and context]</span></p>
+
+            <h3 class="subsection-header">1.2 Problem Statement</h3>
+            <p><span class="placeholder">[Describe the specific problem or challenge this project addresses]</span></p>
+
+            <h3 class="subsection-header">1.3 Solution Summary</h3>
+            <p><span class="placeholder">[High-level description of what will be built]</span></p>
+        </section>
+
+        <!-- Section 2: Objectives -->
+        <section class="section">
+            <h2 class="section-header"><span class="section-number">2.</span>Objectives</h2>
+            <p>The primary objectives of this project are:</p>
+            <ol>
+                <li><strong><span class="placeholder">[Objective 1]</span>:</strong> <span class="placeholder">[Description]</span></li>
+                <li><strong><span class="placeholder">[Objective 2]</span>:</strong> <span class="placeholder">[Description]</span></li>
+                <li><strong><span class="placeholder">[Objective 3]</span>:</strong> <span class="placeholder">[Description]</span></li>
+            </ol>
+        </section>
+
+        <!-- Section 3: Deliverables -->
+        <section class="section">
+            <h2 class="section-header"><span class="section-number">3.</span>Deliverables</h2>
+
+            <h3 class="subsection-header">3.1 Workflow 1: <span class="placeholder">[Workflow Name]</span></h3>
+            <table class="workflow-table">
+                <tr>
+                    <th>Purpose</th>
+                    <td><span class="placeholder">[What this workflow accomplishes]</span></td>
+                </tr>
+                <tr>
+                    <th>Trigger</th>
+                    <td><span class="placeholder">[How/when it starts - webhook, schedule, manual]</span></td>
+                </tr>
+                <tr>
+                    <th>Input</th>
+                    <td><span class="placeholder">[What data comes in]</span></td>
+                </tr>
+                <tr>
+                    <th>Process</th>
+                    <td><span class="placeholder">[What happens to the data]</span></td>
+                </tr>
+                <tr>
+                    <th>Output</th>
+                    <td><span class="placeholder">[What actions are taken / results produced]</span></td>
+                </tr>
+                <tr>
+                    <th>Integrations</th>
+                    <td><span class="placeholder">[Systems connected]</span></td>
+                </tr>
+            </table>
+
+            <h3 class="subsection-header">3.2 Workflow 2: <span class="placeholder">[Workflow Name]</span></h3>
+            <table class="workflow-table">
+                <tr>
+                    <th>Purpose</th>
+                    <td><span class="placeholder">[What this workflow accomplishes]</span></td>
+                </tr>
+                <tr>
+                    <th>Trigger</th>
+                    <td><span class="placeholder">[How/when it starts]</span></td>
+                </tr>
+                <tr>
+                    <th>Input</th>
+                    <td><span class="placeholder">[What data comes in]</span></td>
+                </tr>
+                <tr>
+                    <th>Process</th>
+                    <td><span class="placeholder">[What happens to the data]</span></td>
+                </tr>
+                <tr>
+                    <th>Output</th>
+                    <td><span class="placeholder">[What actions are taken]</span></td>
+                </tr>
+                <tr>
+                    <th>Integrations</th>
+                    <td><span class="placeholder">[Systems connected]</span></td>
+                </tr>
+            </table>
+
+            <h3 class="subsection-header">3.3 Documentation Package</h3>
+            <ul class="checklist">
+                <li>Workflow walkthrough video (Loom)</li>
+                <li>Technical documentation</li>
+                <li>Credential setup guide</li>
+                <li>FAQ document</li>
+                <li>Workflow exports (JSON backups)</li>
+            </ul>
+
+            <h3 class="subsection-header">3.4 Training</h3>
+            <ul class="checklist">
+                <li>Handover call (<span class="placeholder">[X]</span> minutes)</li>
+                <li><span class="placeholder">[Additional training if included]</span></li>
+            </ul>
+        </section>
+
+        <!-- Section 4: Success Criteria -->
+        <section class="section">
+            <h2 class="section-header"><span class="section-number">4.</span>Success Criteria</h2>
+            <p>The project will be considered complete when:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 50px;">#</th>
+                        <th>Criterion</th>
+                        <th>Measurement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><span class="placeholder">[Criterion]</span></td>
+                        <td><span class="placeholder">[How we'll verify]</span></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><span class="placeholder">[Criterion]</span></td>
+                        <td><span class="placeholder">[How we'll verify]</span></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><span class="placeholder">[Criterion]</span></td>
+                        <td><span class="placeholder">[How we'll verify]</span></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><span class="placeholder">[Criterion]</span></td>
+                        <td><span class="placeholder">[How we'll verify]</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section 5: What's NOT Included -->
+        <section class="section">
+            <h2 class="section-header"><span class="section-number">5.</span>What's NOT Included</h2>
+            <div class="exclusions-box">
+                <h4>Scope Exclusions</h4>
+                <p>To maintain clear scope boundaries, the following are explicitly excluded:</p>
+                <ul class="checklist">
+                    <li><span class="placeholder">[Exclusion 1 - e.g., "Additional workflows beyond those listed"]</span></li>
+                    <li><span class="placeholder">[Exclusion 2 - e.g., "Integration with systems not specified"]</span></li>
+                    <li><span class="placeholder">[Exclusion 3 - e.g., "Custom UI/dashboard development"]</span></li>
+                    <li><span class="placeholder">[Exclusion 4 - e.g., "Data migration"]</span></li>
+                    <li><span class="placeholder">[Exclusion 5 - e.g., "Ongoing maintenance (quoted separately)"]</span></li>
+                </ul>
+                <p class="note"><em>Any items not explicitly listed in Section 3 are considered out of scope.</em></p>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- Section 6: Client Responsibilities -->
+        <section class="section">
+            <h2 class="section-header"><span class="section-number">6.</span>Client Responsibilities</h2>
+            <p>For successful project delivery, Client agrees to provide:</p>
+
+            <h3 class="subsection-header">6.1 Access & Credentials</h3>
+            <ul class="checklist">
+                <li>n8n environment (Client-owned account)</li>
+                <li>Admin access to required integrations</li>
+                <li>API credentials for connected services</li>
+            </ul>
+
+            <h3 class="subsection-header">6.2 Information & Data</h3>
+            <ul class="checklist">
+                <li>Sample data/examples for testing (minimum <span class="placeholder">[X]</span> examples)</li>
+                <li>Business rules and logic documentation</li>
+                <li>Brand/tone guidelines (if applicable)</li>
+            </ul>
+
+            <h3 class="subsection-header">6.3 Availability</h3>
+            <ul class="checklist">
+                <li>Respond to questions within 48 hours</li>
+                <li>Provide feedback within <span class="placeholder">[X]</span> business days</li>
+                <li>Attend scheduled calls and handover session</li>
+                <li>Designate decision-maker with authority to approve</li>
+            </ul>
+
+            <h3 class="subsection-header">6.4 Technical Requirements</h3>
+            <ul class="checklist">
+                <li><span class="placeholder">[Any specific technical requirements]</span></li>
+            </ul>
+        </section>
+
+        <!-- Section 7: Timeline -->
+        <section class="section">
+            <h2 class="section-header"><span class="section-number">7.</span>Timeline</h2>
+
+            <h3 class="subsection-header">7.1 Project Phases</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Activities</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Setup</strong></td>
+                        <td>Kickoff, environment configuration, credential setup</td>
+                        <td><span class="placeholder">[X days/week]</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Development</strong></td>
+                        <td>Build workflows, implement integrations, AI components</td>
+                        <td><span class="placeholder">[X days/weeks]</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Testing</strong></td>
+                        <td>Internal QA, client testing, refinements</td>
+                        <td><span class="placeholder">[X days/week]</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Delivery</strong></td>
+                        <td>Documentation, handover, go-live</td>
+                        <td><span class="placeholder">[X days]</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-header">7.2 Key Milestones</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Milestone</th>
+                        <th>Target</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Project Kickoff</td>
+                        <td><span class="placeholder">[Date/Week X]</span></td>
+                    </tr>
+                    <tr>
+                        <td>Development Complete</td>
+                        <td><span class="placeholder">[Date/Week X]</span></td>
+                    </tr>
+                    <tr>
+                        <td>Client Testing Begins</td>
+                        <td><span class="placeholder">[Date/Week X]</span></td>
+                    </tr>
+                    <tr>
+                        <td>Handover & Go-Live</td>
+                        <td><span class="placeholder">[Date/Week X]</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-header">7.3 Dependencies</h3>
+            <div class="note">
+                <p><strong>Timeline assumes:</strong></p>
+                <ul>
+                    <li>Timely client responses (within 48 hours)</li>
+                    <li>All access/credentials provided by kickoff</li>
+                    <li>No significant scope changes</li>
+                </ul>
+                <p><em>Delays in client deliverables may impact timeline proportionally.</em></p>
+            </div>
+        </section>
+
+        <!-- Section 8: Investment -->
+        <section class="section">
+            <h2 class="section-header"><span class="section-number">8.</span>Investment</h2>
+
+            <h3 class="subsection-header">8.1 Project Fee</h3>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th style="width: 150px;">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Workflow Development</td>
+                        <td>$<span class="placeholder">[X,XXX]</span></td>
+                    </tr>
+                    <tr>
+                        <td>Documentation & Training</td>
+                        <td>Included</td>
+                    </tr>
+                    <tr>
+                        <td><span class="placeholder">[X]</span> Days Post-Launch Support</td>
+                        <td>Included</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>Total Project Investment</strong></td>
+                        <td><strong>$<span class="placeholder">[X,XXX]</span></strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-header">8.2 Payment Schedule</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Payment</th>
+                        <th>Amount</th>
+                        <th>Due</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Deposit (to begin work)</td>
+                        <td>$<span class="placeholder">[X,XXX]</span> (50%)</td>
+                        <td>Upon agreement signing</td>
+                    </tr>
+                    <tr>
+                        <td>Final Payment</td>
+                        <td>$<span class="placeholder">[X,XXX]</span> (50%)</td>
+                        <td>Upon project completion</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-header">8.3 Payment Terms</h3>
+            <ul>
+                <li>Invoices due Net <span class="placeholder">[15/30]</span></li>
+                <li>Accepted payment methods: <span class="placeholder">[Bank Transfer / Credit Card / etc.]</span></li>
+                <li>Late payments subject to <span class="placeholder">[X]</span>% monthly fee</li>
+            </ul>
+        </section>
+
+        <!-- Section 9: Optional Maintenance -->
+        <section class="section">
+            <h2 class="section-header"><span class="section-number">9.</span>Optional: Ongoing Maintenance</h2>
+
+            <h3 class="subsection-header">Maintenance Retainer (Optional)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tier</th>
+                        <th>Monthly Fee</th>
+                        <th>Includes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Basic</strong></td>
+                        <td>$<span class="placeholder">[XXX]</span>/month</td>
+                        <td>Monitoring, bug fixes, <span class="placeholder">[X]</span> hours support</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Standard</strong></td>
+                        <td>$<span class="placeholder">[XXX]</span>/month</td>
+                        <td>Above + minor updates, monthly check-in</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Premium</strong></td>
+                        <td>$<span class="placeholder">[XXX]</span>/month</td>
+                        <td>Above + priority support, <span class="placeholder">[X]</span> hours dev time</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="note"><em>Retainer begins after project completion if selected.</em></p>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- Section 10: Terms & Conditions -->
+        <section class="section">
+            <h2 class="section-header"><span class="section-number">10.</span>Terms & Conditions</h2>
+
+            <h3 class="subsection-header">10.1 Change Requests</h3>
+            <p>Changes to scope after signing will be documented and quoted separately. No out-of-scope work will be performed without written approval.</p>
+
+            <h3 class="subsection-header">10.2 Intellectual Property</h3>
+            <p>Upon full payment, Client owns all deliverables created specifically for this project. Provider retains rights to reusable templates, patterns, and generic components.</p>
+
+            <h3 class="subsection-header">10.3 Confidentiality</h3>
+            <p>Both parties agree to keep project details and any shared information confidential.</p>
+
+            <h3 class="subsection-header">10.4 Limitation of Liability</h3>
+            <p>Provider's liability is limited to the total fees paid for this project.</p>
+
+            <h3 class="subsection-header">10.5 Termination</h3>
+            <p>Either party may terminate with <span class="placeholder">[14/30]</span> days written notice. Client pays for all work completed to date.</p>
+        </section>
+
+        <!-- Section 11: Acceptance -->
+        <section class="section signature-section">
+            <h2 class="section-header"><span class="section-number">11.</span>Acceptance</h2>
+            <p>By signing below, both parties agree to the terms outlined in this Scope of Work.</p>
+
+            <div class="signature-block">
+                <h4>Client</h4>
+                <div class="signature-line">
+                    <label>Signature</label>
+                    <div class="line"></div>
+                </div>
+                <div class="signature-line">
+                    <label>Name</label>
+                    <div class="line"></div>
+                </div>
+                <div class="signature-line">
+                    <label>Title</label>
+                    <div class="line"></div>
+                </div>
+                <div class="signature-line">
+                    <label>Date</label>
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="signature-block">
+                <h4>Provider</h4>
+                <div class="signature-line">
+                    <label>Signature</label>
+                    <div class="line"></div>
+                </div>
+                <div class="signature-line">
+                    <label>Name</label>
+                    <div class="line"></div>
+                </div>
+                <div class="signature-line">
+                    <label>Title</label>
+                    <div class="line"></div>
+                </div>
+                <div class="signature-line">
+                    <label>Date</label>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appendices -->
+        <div class="appendix">
+            <h3>Appendix A: Technical Requirements</h3>
+            <p><span class="placeholder">[Add any specific technical details, API documentation links, or system requirements]</span></p>
+        </div>
+
+        <div class="appendix">
+            <h3>Appendix B: Sample Data Specifications</h3>
+            <p><span class="placeholder">[Describe the format and type of sample data needed from client]</span></p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="document-footer">
+            <p>Document Version: 1.0 | Last Updated: <span class="placeholder">[Date]</span></p>
+            <p>Confidential - For intended recipient only</p>
+        </footer>
+    </div>
+</body>
+</html>

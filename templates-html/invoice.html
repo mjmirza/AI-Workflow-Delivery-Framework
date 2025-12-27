@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .invoice-container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+
+        @page {
+            margin: 0.5in;
+            size: letter;
+        }
+
+        /* Invoice Container */
+        .invoice-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        .invoice-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .company-info {
+            flex: 1;
+        }
+
+        .company-logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .company-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .company-details {
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .invoice-title-section {
+            text-align: right;
+        }
+
+        .invoice-title {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .invoice-meta {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .invoice-meta table {
+            margin-left: auto;
+        }
+
+        .invoice-meta td {
+            padding: 3px 0;
+        }
+
+        .invoice-meta .label {
+            text-align: right;
+            padding-right: 15px;
+            font-weight: 600;
+        }
+
+        /* Body */
+        .invoice-body {
+            padding: 40px;
+        }
+
+        /* Bill To Section */
+        .bill-to-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .bill-to, .project-info {
+            width: 48%;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #3498db;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .client-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .client-details {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .project-info-box {
+            background-color: #f8f9fa;
+            border-left: 3px solid #3498db;
+            padding: 15px;
+        }
+
+        .project-info-box p {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .project-info-box .project-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        /* Line Items Table */
+        .line-items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .line-items-table thead {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        .line-items-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .line-items-table th:last-child,
+        .line-items-table td:last-child {
+            text-align: right;
+        }
+
+        .line-items-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .line-items-table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .item-description {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .item-details {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .item-details ul {
+            margin-top: 8px;
+            margin-left: 15px;
+        }
+
+        .item-details li {
+            margin-bottom: 3px;
+        }
+
+        /* Totals Section */
+        .totals-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .totals-table {
+            width: 300px;
+            border-collapse: collapse;
+        }
+
+        .totals-table td {
+            padding: 10px 15px;
+        }
+
+        .totals-table .label {
+            text-align: left;
+            color: #666;
+        }
+
+        .totals-table .value {
+            text-align: right;
+            font-weight: 500;
+        }
+
+        .totals-table .subtotal-row {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .totals-table .total-row {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        .totals-table .total-row td {
+            padding: 15px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .totals-table .paid-row {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .totals-table .balance-row {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        /* Payment Section */
+        .payment-section {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .payment-section h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .payment-method {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .payment-method h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .payment-method p {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .payment-method .highlight {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        /* Status Badge */
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .status-pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .status-paid {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status-overdue {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        /* Notes Section */
+        .notes-section {
+            margin-bottom: 30px;
+        }
+
+        .notes-section h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .notes-section p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .notes-section ul {
+            list-style: none;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .notes-section li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .notes-section li::before {
+            content: "\2022";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+
+        /* Footer */
+        .invoice-footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 25px 40px;
+            text-align: center;
+        }
+
+        .thank-you {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .footer-note {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        /* Placeholder Styling */
+        .placeholder {
+            background-color: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+        /* Watermark for Paid/Overdue */
+        .watermark {
+            position: relative;
+        }
+
+        .watermark::before {
+            content: "PAID";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 120px;
+            font-weight: 900;
+            color: rgba(39, 174, 96, 0.1);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Due Date Highlight */
+        .due-date-highlight {
+            background-color: #fff3cd;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        /* Delivered Items Checkmark */
+        .delivered-item {
+            color: #27ae60;
+        }
+
+        .delivered-item::before {
+            content: "\2713 ";
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <!-- Header -->
+        <header class="invoice-header">
+            <div class="company-info">
+                <!-- Company Logo Placeholder -->
+                <img src="logo.png" alt="Company Logo" class="company-logo" onerror="this.style.display='none'">
+                <div class="company-name"><span class="placeholder">[Your Company Name]</span></div>
+                <div class="company-details">
+                    <span class="placeholder">[Your Address]</span><br>
+                    <span class="placeholder">[Your City, State ZIP]</span><br>
+                    <span class="placeholder">[Your Email]</span><br>
+                    <span class="placeholder">[Your Phone]</span>
+                </div>
+            </div>
+            <div class="invoice-title-section">
+                <h1 class="invoice-title">INVOICE</h1>
+                <div class="invoice-meta">
+                    <table>
+                        <tr>
+                            <td class="label">Invoice #:</td>
+                            <td><span class="placeholder">INV-[XXXX]</span></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Date:</td>
+                            <td><span class="placeholder">[DATE]</span></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Due Date:</td>
+                            <td><span class="due-date-highlight"><span class="placeholder">[DUE DATE]</span></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </header>
+
+        <!-- Body -->
+        <div class="invoice-body">
+            <!-- Bill To Section -->
+            <div class="bill-to-section">
+                <div class="bill-to">
+                    <div class="section-label">Bill To</div>
+                    <div class="client-name"><span class="placeholder">[Client Company Name]</span></div>
+                    <div class="client-details">
+                        <span class="placeholder">[Client Address]</span><br>
+                        <span class="placeholder">[Client City, State ZIP]</span><br>
+                        <span class="placeholder">[Client Email]</span><br>
+                        Attn: <span class="placeholder">[Contact Name]</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="section-label">Project Information</div>
+                    <div class="project-info-box">
+                        <p><strong>Project:</strong> <span class="project-name"><span class="placeholder">[Project Name]</span></span></p>
+                        <p><strong>Agreement #:</strong> <span class="placeholder">[Agreement #]</span></p>
+                        <p><strong>Status:</strong> <span class="status-badge status-pending">Pending</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Line Items Table -->
+            <table class="line-items-table">
+                <thead>
+                    <tr>
+                        <th style="width: 60%;">Description</th>
+                        <th style="width: 15%;">Qty</th>
+                        <th style="width: 25%;">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="item-description">Project Deposit - <span class="placeholder">[Project Name]</span></div>
+                            <div class="item-details">
+                                (50% of total project fee of $<span class="placeholder">[X,XXX]</span>)
+                                <ul>
+                                    <li><span class="placeholder">[Workflow 1]</span></li>
+                                    <li><span class="placeholder">[Workflow 2]</span></li>
+                                    <li>Documentation & Training</li>
+                                    <li><span class="placeholder">[X]</span> Days Post-Launch Support</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td>$<span class="placeholder">[X,XXX.XX]</span></td>
+                    </tr>
+                    <!-- Add more line items as needed -->
+                    <tr>
+                        <td>
+                            <div class="item-description"><span class="placeholder">[Additional Item Description]</span></div>
+                            <div class="item-details"><span class="placeholder">[Item details if any]</span></div>
+                        </td>
+                        <td><span class="placeholder">[Qty]</span></td>
+                        <td>$<span class="placeholder">[XXX.XX]</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Totals Section -->
+            <div class="totals-section">
+                <table class="totals-table">
+                    <tr class="subtotal-row">
+                        <td class="label">Subtotal</td>
+                        <td class="value">$<span class="placeholder">[X,XXX.XX]</span></td>
+                    </tr>
+                    <tr class="subtotal-row">
+                        <td class="label">Tax (<span class="placeholder">[X]</span>%)</td>
+                        <td class="value">$<span class="placeholder">[XXX.XX]</span></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td class="label">Total Due</td>
+                        <td class="value">$<span class="placeholder">[X,XXX.XX]</span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Payment Section -->
+            <div class="payment-section">
+                <h3>Payment Methods</h3>
+                <div class="payment-methods">
+                    <div class="payment-method">
+                        <h4>Bank Transfer</h4>
+                        <p>Bank: <span class="highlight"><span class="placeholder">[Bank Name]</span></span></p>
+                        <p>Account: <span class="highlight"><span class="placeholder">[Account Number]</span></span></p>
+                        <p>Routing: <span class="highlight"><span class="placeholder">[Routing Number]</span></span></p>
+                    </div>
+                    <div class="payment-method">
+                        <h4>Credit Card / Online</h4>
+                        <p>Pay online at:</p>
+                        <p><span class="highlight"><span class="placeholder">[Payment Link]</span></span></p>
+                    </div>
+                    <div class="payment-method">
+                        <h4>Other Methods</h4>
+                        <p><span class="placeholder">[PayPal, Wise, etc.]</span></p>
+                        <p><span class="placeholder">[Additional payment info]</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notes Section -->
+            <div class="notes-section">
+                <h3>Notes</h3>
+                <ul>
+                    <li>Payment due within <span class="placeholder">[15]</span> days of invoice date</li>
+                    <li>Work begins upon receipt of payment</li>
+                    <li>Questions? Contact <span class="placeholder">[email]</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="invoice-footer">
+            <div class="thank-you">Thank you for your business!</div>
+            <div class="footer-note">If you have any questions about this invoice, please contact us.</div>
+        </footer>
+    </div>
+
+    <!--
+    =====================================================
+    ALTERNATIVE: FINAL INVOICE VARIANT
+    =====================================================
+    For a final invoice, modify the line items section:
+
+    <tr>
+        <td>
+            <div class="item-description">Project Completion - [Project Name]</div>
+            <div class="item-details">
+                (Final 50% of total project fee)
+                <ul>
+                    <li class="delivered-item">[Workflow 1] - Completed</li>
+                    <li class="delivered-item">[Workflow 2] - Completed</li>
+                    <li class="delivered-item">Documentation Package</li>
+                    <li class="delivered-item">Training/Handover Call</li>
+                    <li class="delivered-item">[X]-Day Support Period Active</li>
+                </ul>
+            </div>
+        </td>
+        <td>1</td>
+        <td>$[X,XXX.XX]</td>
+    </tr>
+
+    And add to totals:
+    <tr class="paid-row">
+        <td class="label">Less: Deposit Paid (INV-[XXXX])</td>
+        <td class="value">-$[X,XXX.XX]</td>
+    </tr>
+    <tr class="balance-row">
+        <td class="label">Balance Due</td>
+        <td class="value">$[X,XXX.XX]</td>
+    </tr>
+    =====================================================
+    -->
+
+    <!--
+    =====================================================
+    ALTERNATIVE: RETAINER INVOICE VARIANT
+    =====================================================
+    Add a retainer summary section before notes:
+
+    <div class="retainer-summary" style="background-color: #e8f4f8; padding: 20px; border-radius: 5px; margin-bottom: 30px;">
+        <h3 style="font-size: 14px; font-weight: 700; color: #2c3e50; margin-bottom: 15px; text-transform: uppercase;">Retainer Summary - [MONTH YEAR]</h3>
+        <table style="width: 100%; font-size: 14px;">
+            <tr>
+                <td style="padding: 5px 0;">Hours included:</td>
+                <td style="text-align: right; font-weight: 600;">[X]</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 0;">Hours used:</td>
+                <td style="text-align: right; font-weight: 600;">[X]</td>
+            </tr>
+            <tr style="border-top: 1px solid #ccc;">
+                <td style="padding: 10px 0 5px;">Hours remaining/overage:</td>
+                <td style="text-align: right; font-weight: 700; color: #27ae60;">[X]</td>
+            </tr>
+        </table>
+        <p style="margin-top: 15px; font-size: 13px; color: #666; font-style: italic;">See attached monthly report for details.</p>
+    </div>
+    =====================================================
+    -->
+</body>
+</html>

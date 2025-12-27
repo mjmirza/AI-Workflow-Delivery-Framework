@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Agreement</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #fff;
+            font-size: 14px;
+        }
+
+        @media print {
+            body { padding: 20px; max-width: 100%; }
+            .no-print { display: none; }
+            .page-break { page-break-before: always; }
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .agreement-meta {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .editable {
+            background: #fef3c7;
+            padding: 1px 3px;
+            border-radius: 2px;
+        }
+
+        h2 {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        h3 {
+            font-size: 14px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .parties-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 25px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border: 1px solid #e5e5e5;
+        }
+
+        .party h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .party p {
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f0f0f0;
+            font-weight: bold;
+        }
+
+        .signature-section {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .signature-block h4 {
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .signature-line {
+            border-bottom: 1px solid #333;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+
+        .signature-label {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .legal-notice {
+            margin-top: 40px;
+            padding: 15px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            font-size: 11px;
+            font-style: italic;
+            color: #666;
+        }
+
+        .print-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button no-print" onclick="window.print()">Print / Save as PDF</button>
+
+    <div class="header">
+        <h1>Service Agreement</h1>
+        <p class="agreement-meta">Agreement #: <span class="editable">AGR-2024-001</span></p>
+    </div>
+
+    <p>This Service Agreement ("Agreement") is entered into as of <strong><span class="editable">[DATE]</span></strong> ("Effective Date") by and between:</p>
+
+    <div class="parties-section">
+        <div class="party">
+            <h4>Provider</h4>
+            <p><strong class="editable">[Your Company Name]</strong></p>
+            <p class="editable">[Your Address]</p>
+            <p class="editable">[Email]</p>
+        </div>
+        <div class="party">
+            <h4>Client</h4>
+            <p><strong class="editable">[Client Company Name]</strong></p>
+            <p class="editable">[Client Address]</p>
+            <p class="editable">[Client Email]</p>
+        </div>
+    </div>
+
+    <p>Collectively referred to as the "Parties."</p>
+
+    <h2>1. Services</h2>
+
+    <h3>1.1 Scope of Services</h3>
+    <p>Provider agrees to perform the services described in the attached Scope of Work (Exhibit A), which is incorporated into this Agreement by reference.</p>
+
+    <h3>1.2 Service Standards</h3>
+    <p>Provider will perform all Services in a professional and workmanlike manner, consistent with industry standards.</p>
+
+    <h3>1.3 Change Orders</h3>
+    <p>Any changes to the Scope of Work must be agreed upon in writing by both Parties before work begins. Provider will provide a quote for additional work, which Client must approve before Provider proceeds.</p>
+
+    <h2>2. Timeline</h2>
+
+    <h3>2.1 Project Timeline</h3>
+    <p>The project timeline is outlined in the Scope of Work (Exhibit A). Provider will use reasonable efforts to meet the stated timeline.</p>
+
+    <h3>2.2 Delays</h3>
+    <p>If Client fails to provide required materials, access, decisions, or feedback within the timeframes specified, the timeline will be extended proportionally.</p>
+
+    <h2>3. Compensation</h2>
+
+    <h3>3.1 Fees</h3>
+    <p>Client agrees to pay Provider the fees set forth in the Scope of Work (Exhibit A).</p>
+
+    <h3>3.2 Payment Schedule</h3>
+    <table>
+        <tr>
+            <th>Payment</th>
+            <th>Amount</th>
+            <th>Due</th>
+        </tr>
+        <tr>
+            <td>Deposit</td>
+            <td><span class="editable">50%</span> of total</td>
+            <td>Upon signing this Agreement</td>
+        </tr>
+        <tr>
+            <td>Final Payment</td>
+            <td><span class="editable">50%</span> of total</td>
+            <td>Upon project completion</td>
+        </tr>
+    </table>
+
+    <h3>3.3 Payment Terms</h3>
+    <ul>
+        <li>Invoices are due within <strong><span class="editable">15</span></strong> days of receipt</li>
+        <li>Accepted payment methods: <span class="editable">[Bank Transfer, Credit Card]</span></li>
+        <li>Late payments incur a <strong><span class="editable">1.5%</span></strong> monthly fee on outstanding balance</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <h2>4. Client Responsibilities</h2>
+    <p>Client agrees to:</p>
+
+    <h3>4.1 Access & Resources</h3>
+    <ul>
+        <li>Provide all necessary access, credentials, and permissions</li>
+        <li>Maintain Client's own n8n instance and API accounts</li>
+        <li>Pay for all third-party API usage directly</li>
+    </ul>
+
+    <h3>4.2 Cooperation</h3>
+    <ul>
+        <li>Respond to requests within <strong><span class="editable">48</span></strong> hours</li>
+        <li>Provide feedback within <strong><span class="editable">5</span></strong> business days</li>
+        <li>Make decisions promptly to avoid delays</li>
+        <li>Designate an authorized representative</li>
+    </ul>
+
+    <h2>5. Intellectual Property</h2>
+
+    <h3>5.1 Work Product</h3>
+    <p>Upon full payment, Client shall own all deliverables created specifically for Client under this Agreement ("Work Product").</p>
+
+    <h3>5.2 Provider Materials</h3>
+    <p>Provider retains all rights to pre-existing tools, templates, methodologies, generic code, patterns, and reusable components. Provider grants Client a perpetual, non-exclusive license to use any Provider Materials incorporated into the Work Product.</p>
+
+    <h2>6. Confidentiality</h2>
+    <p>Both Parties agree to protect Confidential Information with reasonable care, use it only for purposes of this Agreement, and not disclose to third parties without prior written consent. Confidentiality obligations survive termination for <strong><span class="editable">2</span></strong> years.</p>
+
+    <h2>7. Limitation of Liability</h2>
+    <p>PROVIDER'S TOTAL LIABILITY UNDER THIS AGREEMENT SHALL NOT EXCEED THE TOTAL FEES PAID BY CLIENT FOR THE SERVICES. IN NO EVENT SHALL EITHER PARTY BE LIABLE FOR INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, OR PUNITIVE DAMAGES.</p>
+
+    <h2>8. Term and Termination</h2>
+
+    <h3>8.1 Term</h3>
+    <p>This Agreement begins on the Effective Date and continues until all Services are completed and fees are paid.</p>
+
+    <h3>8.2 Termination</h3>
+    <p>Either Party may terminate with <strong><span class="editable">30</span></strong> days written notice. Client shall pay for all work completed. Either Party may terminate immediately if the other Party materially breaches and fails to cure within <span class="editable">14</span> days of notice.</p>
+
+    <h2>9. General Provisions</h2>
+    <ul>
+        <li><strong>Independent Contractor:</strong> Provider is an independent contractor, not an employee.</li>
+        <li><strong>Governing Law:</strong> This Agreement is governed by the laws of <span class="editable">[State/Country]</span>.</li>
+        <li><strong>Entire Agreement:</strong> This Agreement, including all Exhibits, constitutes the entire agreement.</li>
+        <li><strong>Amendments:</strong> Amendments must be in writing and signed by both Parties.</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <h2>Signatures</h2>
+    <p>By signing below, the Parties agree to be bound by this Agreement.</p>
+
+    <div class="signature-section">
+        <div class="signature-block">
+            <h4>Provider</h4>
+            <div class="signature-line"></div>
+            <p class="signature-label">Signature</p>
+            <p style="margin-top: 15px;"><strong class="editable">[Your Name]</strong></p>
+            <p class="editable">[Your Title]</p>
+            <p style="margin-top: 15px;">Date: _______________</p>
+        </div>
+        <div class="signature-block">
+            <h4>Client</h4>
+            <div class="signature-line"></div>
+            <p class="signature-label">Signature</p>
+            <p style="margin-top: 15px;">Name: _______________</p>
+            <p>Title: _______________</p>
+            <p style="margin-top: 15px;">Date: _______________</p>
+        </div>
+    </div>
+
+    <h2 style="margin-top: 60px;">Exhibit A: Scope of Work</h2>
+    <p><em>[Attach or reference the Scope of Work document]</em></p>
+
+    <div class="legal-notice">
+        <strong>DISCLAIMER:</strong> This is a template for informational purposes. Consult with a qualified attorney to ensure compliance with applicable laws and your specific business needs.
+    </div>
+</body>
+</html>

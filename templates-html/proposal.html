@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Proposal</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .proposal-container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+
+        @page {
+            margin: 0.75in;
+            size: letter;
+        }
+
+        /* Proposal Container */
+        .proposal-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Cover Page */
+        .cover-page {
+            background: linear-gradient(135deg, #1a252f 0%, #2c3e50 50%, #34495e 100%);
+            color: white;
+            padding: 80px 60px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover-page::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cover-header {
+            position: relative;
+            z-index: 1;
+        }
+
+        .company-logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .proposal-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .proposal-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .proposal-subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .cover-footer {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 30px;
+        }
+
+        .prepared-for, .prepared-by {
+            font-size: 14px;
+        }
+
+        .prepared-for .label, .prepared-by .label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #3498db;
+            margin-bottom: 8px;
+        }
+
+        .prepared-for .name, .prepared-by .name {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .proposal-date {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Content Pages */
+        .content-page {
+            padding: 60px;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .section-number {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .subsection-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #34495e;
+            margin: 25px 0 15px 0;
+        }
+
+        /* Content */
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 15px;
+        }
+
+        .lead-paragraph {
+            font-size: 17px;
+            color: #555;
+            border-left: 4px solid #3498db;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        /* Placeholder */
+        .placeholder {
+            background-color: #fff3cd;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        /* Executive Summary Box */
+        .executive-summary {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+
+        .executive-summary h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        /* Benefits List */
+        .benefits-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .benefits-list li {
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 60px;
+            transition: transform 0.2s ease;
+        }
+
+        .benefits-list li:hover {
+            transform: translateX(5px);
+        }
+
+        .benefits-list li::before {
+            content: "\2713";
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #27ae60;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .benefits-list li strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Solution Cards */
+        .solution-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .solution-card {
+            background-color: white;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .solution-card h4 {
+            color: #3498db;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .solution-card p {
+            font-size: 14px;
+            color: #666;
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #e9ecef;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #e8f4f8;
+        }
+
+        /* Pricing Table */
+        .pricing-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+        }
+
+        .pricing-section h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .pricing-table {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .pricing-table th {
+            background-color: #3498db;
+        }
+
+        .pricing-table td {
+            color: #333;
+        }
+
+        .pricing-table .total-row {
+            background-color: #2c3e50 !important;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .pricing-table .total-row td {
+            color: white;
+            padding: 20px 15px;
+        }
+
+        .pricing-highlight {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .pricing-highlight .price {
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .pricing-highlight .price-note {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 30px 0;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #3498db 0%, #27ae60 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -32px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background-color: #3498db;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px #3498db;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item h4 {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item .duration {
+            display: inline-block;
+            background-color: #e8f4f8;
+            color: #3498db;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .timeline-item p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        /* Why Choose Us */
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .why-us-item {
+            text-align: center;
+            padding: 25px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .why-us-item .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+
+        .why-us-item h4 {
+            font-size: 16px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .why-us-item p {
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        /* Terms Box */
+        .terms-box {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 25px 0;
+        }
+
+        .terms-box h4 {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .terms-box ul {
+            list-style: none;
+        }
+
+        .terms-box li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 14px;
+        }
+
+        .terms-box li:last-child {
+            border-bottom: none;
+        }
+
+        /* Signature Section */
+        .signature-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #e9ecef;
+        }
+
+        .signature-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .signature-intro h3 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .signature-intro p {
+            color: #666;
+            text-align: center;
+        }
+
+        .signature-blocks {
+            display: flex;
+            gap: 50px;
+        }
+
+        .signature-block {
+            flex: 1;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .signature-block h4 {
+            font-size: 18px;
+            color: #3498db;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .signature-field {
+            margin-bottom: 20px;
+        }
+
+        .signature-field label {
+            display: block;
+            font-size: 12px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .signature-field .line {
+            border-bottom: 2px solid #333;
+            height: 35px;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            text-align: center;
+            padding: 50px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .cta-section h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #27ae60;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .proposal-footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        .proposal-footer p {
+            margin-bottom: 5px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .validity-note {
+            background-color: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cover-page {
+                padding: 40px 30px;
+            }
+            .content-page {
+                padding: 30px;
+            }
+            .signature-blocks {
+                flex-direction: column;
+            }
+            .why-us-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="proposal-container">
+        <!-- Cover Page -->
+        <div class="cover-page">
+            <div class="cover-header">
+                <img src="logo.png" alt="Company Logo" class="company-logo" onerror="this.style.display='none'">
+            </div>
+            <div class="cover-content">
+                <div class="proposal-label">Project Proposal</div>
+                <h1 class="proposal-title"><span class="placeholder">[Project Name]</span></h1>
+                <p class="proposal-subtitle">Workflow Automation Solution</p>
+            </div>
+            <div class="cover-footer">
+                <div class="prepared-for">
+                    <div class="label">Prepared For</div>
+                    <div class="name"><span class="placeholder">[Client Company Name]</span></div>
+                    <div class="proposal-date"><span class="placeholder">[Client Contact Name]</span></div>
+                </div>
+                <div class="prepared-by">
+                    <div class="label">Prepared By</div>
+                    <div class="name"><span class="placeholder">[Your Company Name]</span></div>
+                    <div class="proposal-date"><span class="placeholder">[Date]</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Executive Summary -->
+        <div class="content-page">
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">1</div>
+                    <h2 class="section-title">Executive Summary</h2>
+                </div>
+
+                <div class="executive-summary">
+                    <h3>The Opportunity</h3>
+                    <p><span class="placeholder">[2-3 sentences summarizing the client's challenge and how this solution addresses it. Focus on business impact and value.]</span></p>
+                </div>
+
+                <p class="lead-paragraph">
+                    This proposal outlines a comprehensive AI workflow automation solution designed to streamline <span class="placeholder">[key business process]</span> and deliver measurable improvements in efficiency, accuracy, and cost savings.
+                </p>
+
+                <h3 class="subsection-title">Key Benefits</h3>
+                <ul class="benefits-list">
+                    <li>
+                        <strong><span class="placeholder">[Benefit 1 Title]</span></strong>
+                        <span class="placeholder">[Description of the benefit and expected impact]</span>
+                    </li>
+                    <li>
+                        <strong><span class="placeholder">[Benefit 2 Title]</span></strong>
+                        <span class="placeholder">[Description of the benefit and expected impact]</span>
+                    </li>
+                    <li>
+                        <strong><span class="placeholder">[Benefit 3 Title]</span></strong>
+                        <span class="placeholder">[Description of the benefit and expected impact]</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Understanding Your Needs -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">2</div>
+                    <h2 class="section-title">Understanding Your Needs</h2>
+                </div>
+
+                <h3 class="subsection-title">Current Challenges</h3>
+                <p><span class="placeholder">[Describe the client's current pain points and challenges that were discussed during discovery]</span></p>
+
+                <h3 class="subsection-title">Goals & Objectives</h3>
+                <p>Based on our discussions, your primary objectives are:</p>
+                <ol>
+                    <li><strong><span class="placeholder">[Objective 1]</span></strong></li>
+                    <li><strong><span class="placeholder">[Objective 2]</span></strong></li>
+                    <li><strong><span class="placeholder">[Objective 3]</span></strong></li>
+                </ol>
+            </section>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Proposed Solution -->
+        <div class="content-page">
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">3</div>
+                    <h2 class="section-title">Proposed Solution</h2>
+                </div>
+
+                <p class="lead-paragraph">
+                    We propose implementing a tailored AI-powered workflow automation system using n8n, integrated with your existing tools and powered by advanced AI capabilities.
+                </p>
+
+                <h3 class="subsection-title">Solution Components</h3>
+                <div class="solution-cards">
+                    <div class="solution-card">
+                        <h4>Workflow 1: <span class="placeholder">[Name]</span></h4>
+                        <p><span class="placeholder">[Brief description of what this workflow does and its business value]</span></p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>Workflow 2: <span class="placeholder">[Name]</span></h4>
+                        <p><span class="placeholder">[Brief description of what this workflow does and its business value]</span></p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>Workflow 3: <span class="placeholder">[Name]</span></h4>
+                        <p><span class="placeholder">[Brief description of what this workflow does and its business value]</span></p>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">Integrations</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>System</th>
+                            <th>Integration Type</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="placeholder">[System 1]</span></td>
+                            <td><span class="placeholder">[API/Webhook/etc.]</span></td>
+                            <td><span class="placeholder">[What data flows]</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="placeholder">[System 2]</span></td>
+                            <td><span class="placeholder">[API/Webhook/etc.]</span></td>
+                            <td><span class="placeholder">[What data flows]</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="placeholder">[System 3]</span></td>
+                            <td><span class="placeholder">[API/Webhook/etc.]</span></td>
+                            <td><span class="placeholder">[What data flows]</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="subsection-title">Deliverables</h3>
+                <ul class="benefits-list">
+                    <li>
+                        <strong>Fully Configured Workflows</strong>
+                        All automation workflows built, tested, and deployed in your n8n environment
+                    </li>
+                    <li>
+                        <strong>Complete Documentation</strong>
+                        Technical documentation, user guides, and walkthrough videos
+                    </li>
+                    <li>
+                        <strong>Training & Handover</strong>
+                        Live training session with your team plus recorded materials
+                    </li>
+                    <li>
+                        <strong>Post-Launch Support</strong>
+                        <span class="placeholder">[X]</span> days of support to ensure smooth operation
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Timeline -->
+        <div class="content-page">
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">4</div>
+                    <h2 class="section-title">Project Timeline</h2>
+                </div>
+
+                <p>The project will be completed in approximately <span class="placeholder">[X]</span> weeks, following this structured approach:</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Phase 1: Discovery & Setup <span class="duration"><span class="placeholder">[X]</span> days</span></h4>
+                        <p>Project kickoff, environment setup, credential configuration, and detailed requirements gathering.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Phase 2: Development <span class="duration"><span class="placeholder">[X]</span> weeks</span></h4>
+                        <p>Building and configuring all workflows, implementing integrations, and developing AI components.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Phase 3: Testing & Refinement <span class="duration"><span class="placeholder">[X]</span> days</span></h4>
+                        <p>Comprehensive testing, client review, and iterative improvements based on feedback.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Phase 4: Delivery & Training <span class="duration"><span class="placeholder">[X]</span> days</span></h4>
+                        <p>Documentation completion, training session, go-live support, and project handover.</p>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Milestone</th>
+                            <th>Target Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Project Kickoff</td>
+                            <td><span class="placeholder">[Date]</span></td>
+                        </tr>
+                        <tr>
+                            <td>Development Complete</td>
+                            <td><span class="placeholder">[Date]</span></td>
+                        </tr>
+                        <tr>
+                            <td>Client Testing</td>
+                            <td><span class="placeholder">[Date]</span></td>
+                        </tr>
+                        <tr>
+                            <td>Go-Live</td>
+                            <td><span class="placeholder">[Date]</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Investment -->
+        <div class="content-page">
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">5</div>
+                    <h2 class="section-title">Investment</h2>
+                </div>
+
+                <div class="pricing-section">
+                    <h3>Project Pricing</h3>
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th style="text-align: right;">Investment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Workflow Development & Configuration</td>
+                                <td style="text-align: right;">$<span class="placeholder">[X,XXX]</span></td>
+                            </tr>
+                            <tr>
+                                <td>Integration Setup</td>
+                                <td style="text-align: right;">Included</td>
+                            </tr>
+                            <tr>
+                                <td>Documentation & Training</td>
+                                <td style="text-align: right;">Included</td>
+                            </tr>
+                            <tr>
+                                <td><span class="placeholder">[X]</span>-Day Post-Launch Support</td>
+                                <td style="text-align: right;">Included</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>Total Project Investment</strong></td>
+                                <td style="text-align: right;"><strong>$<span class="placeholder">[X,XXX]</span></strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pricing-highlight">
+                        <div class="price">$<span class="placeholder">[X,XXX]</span></div>
+                        <div class="price-note">One-time project fee</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">Payment Terms</h3>
+                <div class="terms-box">
+                    <table style="margin: 0;">
+                        <thead>
+                            <tr>
+                                <th>Payment</th>
+                                <th>Amount</th>
+                                <th>Due</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Deposit</td>
+                                <td>50% ($<span class="placeholder">[X,XXX]</span>)</td>
+                                <td>Upon agreement signing</td>
+                            </tr>
+                            <tr>
+                                <td>Final Payment</td>
+                                <td>50% ($<span class="placeholder">[X,XXX]</span>)</td>
+                                <td>Upon project completion</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="subsection-title">Optional: Ongoing Maintenance</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Plan</th>
+                            <th>Monthly Fee</th>
+                            <th>What's Included</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Basic</strong></td>
+                            <td>$<span class="placeholder">[XXX]</span>/mo</td>
+                            <td>Monitoring, bug fixes, <span class="placeholder">[X]</span> hrs support</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Standard</strong></td>
+                            <td>$<span class="placeholder">[XXX]</span>/mo</td>
+                            <td>Above + minor updates, monthly check-in</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Premium</strong></td>
+                            <td>$<span class="placeholder">[XXX]</span>/mo</td>
+                            <td>Above + priority support, <span class="placeholder">[X]</span> hrs dev time</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Why Choose Us -->
+        <div class="content-page">
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">6</div>
+                    <h2 class="section-title">Why Choose Us</h2>
+                </div>
+
+                <div class="why-us-grid">
+                    <div class="why-us-item">
+                        <div class="icon">&#9733;</div>
+                        <h4>Expertise</h4>
+                        <p><span class="placeholder">[Your experience and specialization in AI/automation]</span></p>
+                    </div>
+                    <div class="why-us-item">
+                        <div class="icon">&#128202;</div>
+                        <h4>Proven Results</h4>
+                        <p><span class="placeholder">[Track record and client success stories]</span></p>
+                    </div>
+                    <div class="why-us-item">
+                        <div class="icon">&#128101;</div>
+                        <h4>Partnership Approach</h4>
+                        <p><span class="placeholder">[Your commitment to client success]</span></p>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">What Our Clients Say</h3>
+                <div class="executive-summary">
+                    <p style="font-style: italic; font-size: 18px; text-align: center;">"<span class="placeholder">[Client testimonial about working with you]</span>"</p>
+                    <p style="text-align: center; margin-top: 15px; margin-bottom: 0;"><strong>- <span class="placeholder">[Client Name, Company]</span></strong></p>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">7</div>
+                    <h2 class="section-title">Next Steps</h2>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Ready to Get Started?</h3>
+                    <p>Let's transform your workflows and unlock new levels of efficiency.</p>
+                    <a href="#signature" class="cta-button">Accept Proposal</a>
+                </div>
+
+                <div class="terms-box">
+                    <h4>To proceed with this project:</h4>
+                    <ul>
+                        <li>1. Review and sign this proposal</li>
+                        <li>2. Submit the 50% deposit payment</li>
+                        <li>3. Schedule the kickoff call</li>
+                        <li>4. Provide access credentials and initial materials</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Terms & Signature -->
+        <div class="content-page">
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">8</div>
+                    <h2 class="section-title">Terms & Acceptance</h2>
+                </div>
+
+                <div class="terms-box">
+                    <h4>Key Terms</h4>
+                    <ul>
+                        <li><strong>Scope:</strong> Services limited to items described in this proposal. Changes require written approval and may incur additional fees.</li>
+                        <li><strong>Timeline:</strong> Dependent on timely client feedback and access. Delays may extend schedule proportionally.</li>
+                        <li><strong>Intellectual Property:</strong> Upon full payment, client owns all custom deliverables. Provider retains rights to reusable components.</li>
+                        <li><strong>Confidentiality:</strong> Both parties agree to protect shared information.</li>
+                        <li><strong>Limitation of Liability:</strong> Provider liability limited to fees paid for services.</li>
+                        <li><strong>Termination:</strong> Either party may terminate with <span class="placeholder">[14/30]</span> days notice. Client pays for work completed.</li>
+                    </ul>
+                </div>
+
+                <div class="signature-section" id="signature">
+                    <div class="signature-intro">
+                        <h3>Acceptance of Proposal</h3>
+                        <p>By signing below, both parties agree to the terms outlined in this proposal.</p>
+                    </div>
+
+                    <div class="signature-blocks">
+                        <div class="signature-block">
+                            <h4>Client</h4>
+                            <div class="signature-field">
+                                <label>Signature</label>
+                                <div class="line"></div>
+                            </div>
+                            <div class="signature-field">
+                                <label>Printed Name</label>
+                                <div class="line"></div>
+                            </div>
+                            <div class="signature-field">
+                                <label>Title</label>
+                                <div class="line"></div>
+                            </div>
+                            <div class="signature-field">
+                                <label>Date</label>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+
+                        <div class="signature-block">
+                            <h4>Provider</h4>
+                            <div class="signature-field">
+                                <label>Signature</label>
+                                <div class="line"></div>
+                            </div>
+                            <div class="signature-field">
+                                <label>Printed Name</label>
+                                <div class="line"></div>
+                            </div>
+                            <div class="signature-field">
+                                <label>Title</label>
+                                <div class="line"></div>
+                            </div>
+                            <div class="signature-field">
+                                <label>Date</label>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="proposal-footer">
+            <p><span class="placeholder">[Your Company Name]</span> | <span class="placeholder">[Your Email]</span> | <span class="placeholder">[Your Phone]</span></p>
+            <p><span class="placeholder">[Your Website]</span></p>
+            <div class="validity-note">
+                This proposal is valid for <span class="placeholder">[30]</span> days from the date of issue.
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
