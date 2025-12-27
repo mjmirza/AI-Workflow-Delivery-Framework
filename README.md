@@ -9,6 +9,21 @@
 [![Documentation](https://img.shields.io/badge/Documentation-Complete-blue.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework#readme)
 [![Enterprise Ready](https://img.shields.io/badge/Enterprise-Ready-success.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework)
 
+---
+
+### Quick Access Templates (Google Docs)
+
+| # | Template | Direct Link |
+|---|----------|-------------|
+| 01 | Master Checklist | [Open in Google Docs](https://docs.google.com/document/d/1ELsx36O76iHUsE-AgqRCQZsANT5HBTCu/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
+| 02 | Standard Operating Procedure | [Open in Google Docs](https://docs.google.com/document/d/1l4ZiUPUJh_Mab6PhTL7EMyVMH-MqJpCr/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
+| 03 | Client Onboarding Template | [Open in Google Docs](https://docs.google.com/document/d/1sLmUd-LtZA4KJ5dUI1wLhfW9MS6XMDA_/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
+| 04 | Security Audit Checklist | [Open in Google Docs](https://docs.google.com/document/d/1vVUjvPYesw7gZDqAgsRLDYXpYkcaFaIY/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
+| 05 | API Key Setup Guide | [Open in Google Docs](https://docs.google.com/document/d/13sajDpMGBo96LfKIGgyOvxqhEpDjZ21-/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
+| 06 | Maintenance Retainer Template | [Open in Google Docs](https://docs.google.com/document/d/1z2ajbo7I6_M-Gdsd8-JjITTp666aHlxQ/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
+
+---
+
 ## Complete Professional Standards for n8n Automation Consultants
 
 ```
