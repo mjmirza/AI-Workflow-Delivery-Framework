@@ -5,7 +5,6 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework/graphs/commit-activity)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework/pulls)
 [![Made with Love](https://img.shields.io/badge/Made%20with-Love-red.svg)](https://next8n.com)
-
 [![n8n](https://img.shields.io/badge/n8n-Workflow%20Automation-orange?logo=n8n&logoColor=white)](https://n8n.io)
 [![Documentation](https://img.shields.io/badge/Documentation-Complete-blue.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework#readme)
 [![Enterprise Ready](https://img.shields.io/badge/Enterprise-Ready-success.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework)
