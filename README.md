@@ -1,9 +1,6 @@
 # Workflow Automation Delivery Framework
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/mjmirza/AI-Workflow-Delivery-Framework.svg?style=social&label=Star)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework)
-[![GitHub forks](https://img.shields.io/github/forks/mjmirza/AI-Workflow-Delivery-Framework.svg?style=social&label=Fork)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework/fork)
-[![GitHub issues](https://img.shields.io/github/issues/mjmirza/AI-Workflow-Delivery-Framework.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/mjmirza/AI-Workflow-Delivery-Framework.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework/commits/main)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework/graphs/commit-activity)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework/pulls)
@@ -11,7 +8,6 @@
 
 [![n8n](https://img.shields.io/badge/n8n-Workflow%20Automation-orange?logo=n8n&logoColor=white)](https://n8n.io)
 [![Documentation](https://img.shields.io/badge/Documentation-Complete-blue.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework#readme)
-[![Templates](https://img.shields.io/badge/Templates-50%2B-purple.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework/tree/main/templates)
 [![Enterprise Ready](https://img.shields.io/badge/Enterprise-Ready-success.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework)
 
 ## Complete Professional Standards for n8n Automation Consultants
