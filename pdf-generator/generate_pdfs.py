@@ -6,14 +6,18 @@ Contact: mirza.iqbal@next8n.com
 Website: https://next8n.com
 
 Generates professional, enterprise-grade PDF documents from markdown files.
+Includes Mermaid diagram rendering support via local CLI.
 """
 
 import os
 import sys
 import re
+import subprocess
+import tempfile
+import hashlib
 from pathlib import Path
 from datetime import datetime
-from typing import Optional
+from typing import Optional, Tuple
 
 try:
     import markdown
@@ -35,6 +39,83 @@ COMPANY_WEBSITE = "https://next8n.com"
 AUTHOR_NAME = "Mirza Iqbal"
 AUTHOR_EMAIL = "mirza.iqbal@next8n.com"
 VERSION = "2.0"
+
+# Paths
+SCRIPT_DIR = Path(__file__).parent
+MERMAID_CLI = SCRIPT_DIR / "node_modules" / ".bin" / "mmdc"
+MERMAID_CACHE_DIR = SCRIPT_DIR / ".mermaid_cache"
+
+
+def get_mermaid_svg(mermaid_code: str) -> str:
+    """Convert Mermaid code to SVG using local CLI."""
+
+    # Create cache directory
+    MERMAID_CACHE_DIR.mkdir(exist_ok=True)
+
+    # Create cache key
+    cache_key = hashlib.md5(mermaid_code.encode()).hexdigest()
+    cache_file = MERMAID_CACHE_DIR / f"{cache_key}.svg"
+
+    # Check cache
+    if cache_file.exists():
+        return cache_file.read_text()
+
+    try:
+        # Write mermaid code to temp file
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.mmd', delete=False) as f:
+            f.write(mermaid_code)
+            input_file = f.name
+
+        output_file = tempfile.mktemp(suffix='.svg')
+
+        # Run mmdc
+        result = subprocess.run(
+            [str(MERMAID_CLI), '-i', input_file, '-o', output_file, '-b', 'transparent'],
+            capture_output=True,
+            text=True,
+            timeout=60
+        )
+
+        # Clean up input file
+        os.unlink(input_file)
+
+        if result.returncode == 0 and os.path.exists(output_file):
+            svg_content = Path(output_file).read_text()
+            os.unlink(output_file)
+
+            # Cache result
+            cache_file.write_text(svg_content)
+            return svg_content
+        else:
+            print(f"      Mermaid CLI error: {result.stderr[:200] if result.stderr else 'Unknown error'}")
+            raise Exception("Mermaid CLI failed")
+
+    except Exception as e:
+        print(f"      Warning: Could not render Mermaid diagram: {e}")
+        # Return a styled placeholder with the code
+        escaped_code = mermaid_code.replace('<', '&lt;').replace('>', '&gt;')
+        return f'''<div style="background:#f8f9fa;border:2px solid #e1e4e8;padding:20px;margin:20px 0;border-radius:8px;">
+            <p style="color:#0366d6;font-weight:bold;margin-bottom:10px;">Flowchart Diagram</p>
+            <pre style="font-size:8pt;color:#24292e;white-space:pre-wrap;background:#fff;padding:15px;border-radius:4px;border:1px solid #e1e4e8;">{escaped_code}</pre>
+        </div>'''
+
+
+def convert_mermaid_to_svg(content: str) -> str:
+    """Find and convert all Mermaid code blocks to SVG images."""
+
+    # Pattern to match mermaid code blocks
+    pattern = r'```mermaid\s*([\s\S]*?)```'
+
+    def replace_mermaid(match):
+        mermaid_code = match.group(1).strip()
+        svg = get_mermaid_svg(mermaid_code)
+
+        # Wrap SVG in a container div for styling
+        return f'''<div class="mermaid-diagram">
+            {svg}
+        </div>'''
+
+    return re.sub(pattern, replace_mermaid, content)
 
 
 # Enterprise CSS Styling
@@ -332,23 +413,20 @@ hr {
     margin: 40px 0;
 }
 
-/* Checkboxes */
-.checklist {
-    list-style: none;
-    padding-left: 0;
+/* Mermaid Diagrams */
+.mermaid-diagram {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background: #fafbfc;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    page-break-inside: avoid;
 }
 
-.checklist li {
-    padding-left: 30px;
-    position: relative;
-}
-
-.checklist li:before {
-    content: "[ ]";
-    position: absolute;
-    left: 0;
-    color: #0f3460;
-    font-weight: bold;
+.mermaid-diagram svg {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Info Boxes */
@@ -487,7 +565,7 @@ class EnterprisePDFGenerator:
 
         return content.strip()
 
-    def extract_title(self, content: str) -> tuple:
+    def extract_title(self, content: str) -> Tuple[str, str]:
         """Extract title and subtitle from markdown content."""
         lines = content.strip().split('\n')
         title = "Document"
@@ -502,7 +580,7 @@ class EnterprisePDFGenerator:
 
         return title, subtitle
 
-    def convert_to_html(self, markdown_content: str) -> tuple:
+    def convert_to_html(self, markdown_content: str) -> Tuple[str, str]:
         """Convert markdown to HTML and extract TOC."""
         self.md.reset()
         html_content = self.md.convert(markdown_content)
@@ -519,6 +597,13 @@ class EnterprisePDFGenerator:
 
         # Clean and process
         content = self.clean_markdown(content)
+
+        # Convert Mermaid diagrams to SVG
+        has_mermaid = '```mermaid' in content
+        if has_mermaid:
+            print(f"    Converting Mermaid diagrams...")
+            content = convert_mermaid_to_svg(content)
+
         title, subtitle = self.extract_title(content)
         html_content, toc = self.convert_to_html(content)
 
@@ -559,11 +644,11 @@ class EnterprisePDFGenerator:
 
         # Define document categories
         categories = {
+            'diagrams': 'Diagrams',
             'checklists': 'Checklists',
             'guides': 'Guides',
             'processes': 'SOPs',
             'templates': 'Templates',
-            'diagrams': 'Diagrams',
         }
 
         # Process README first
@@ -572,7 +657,7 @@ class EnterprisePDFGenerator:
             print("\nGenerating README...")
             generated.append(self.generate_pdf(readme, '00-README-Overview'))
 
-        # Process each category
+        # Process each category (diagrams first to test Mermaid)
         for folder, category in categories.items():
             folder_path = self.base_path / folder
             if folder_path.exists():
@@ -614,6 +699,12 @@ class EnterprisePDFGenerator:
                 with open(md_file, 'r', encoding='utf-8') as f:
                     content = f.read()
                 content = self.clean_markdown(content)
+
+                # Convert Mermaid diagrams
+                if '```mermaid' in content:
+                    print(f"  Converting Mermaid in {md_file.name}...")
+                    content = convert_mermaid_to_svg(content)
+
                 all_content.append(f"\n\n---\n\n{content}")
 
         combined_content = "\n".join(all_content)
@@ -664,6 +755,25 @@ def main():
     print(f"\nBase Path: {base_path}")
     print(f"Output Path: {output_path}")
 
+    # Check for mermaid CLI
+    if not MERMAID_CLI.exists():
+        print(f"\nWarning: Mermaid CLI not found at {MERMAID_CLI}")
+        print("Run: npm install @mermaid-js/mermaid-cli")
+        print("Diagrams will use placeholder rendering.\n")
+
+    # Clean output directories
+    print("\nCleaning output directories...")
+    for subdir in ['checklists', 'guides', 'processes', 'templates', 'diagrams', 'overview']:
+        subdir_path = output_path / subdir
+        if subdir_path.exists():
+            for f in subdir_path.glob('*.pdf'):
+                f.unlink()
+
+    # Clear mermaid cache
+    if MERMAID_CACHE_DIR.exists():
+        for f in MERMAID_CACHE_DIR.glob('*.svg'):
+            f.unlink()
+
     # Initialize generator
     generator = EnterprisePDFGenerator(base_path, output_path)
 
@@ -682,16 +792,44 @@ def main():
     combined = generator.generate_combined_pdf()
     generated_files.append(combined)
 
+    # Organize files into folders
+    print("\n" + "=" * 60)
+    print("Organizing files into folders...")
+    print("=" * 60)
+
+    folder_mapping = {
+        'CHECKLISTS-': 'checklists',
+        'GUIDES-': 'guides',
+        'PROCESSES-': 'processes',
+        'TEMPLATES-': 'templates',
+        'DIAGRAMS-': 'diagrams',
+        '00-README': 'overview',
+        'Complete-': 'overview',
+    }
+
+    for pdf_file in output_path.glob('*.pdf'):
+        for prefix, folder in folder_mapping.items():
+            if pdf_file.name.startswith(prefix):
+                dest_folder = output_path / folder
+                dest_folder.mkdir(exist_ok=True)
+                dest_file = dest_folder / pdf_file.name
+                pdf_file.rename(dest_file)
+                print(f"  Moved {pdf_file.name} -> {folder}/")
+                break
+
     # Summary
     print("\n" + "=" * 60)
     print("Generation Complete!")
     print("=" * 60)
     print(f"\nTotal PDFs Generated: {len(generated_files)}")
     print(f"Output Directory: {output_path}")
-    print("\nGenerated Files:")
-    for f in generated_files:
-        size_kb = f.stat().st_size / 1024
-        print(f"  - {f.name} ({size_kb:.1f} KB)")
+
+    # Count files in each folder
+    for folder in ['overview', 'diagrams', 'checklists', 'guides', 'processes', 'templates']:
+        folder_path = output_path / folder
+        if folder_path.exists():
+            count = len(list(folder_path.glob('*.pdf')))
+            print(f"  {folder}/: {count} PDFs")
 
     print("\n" + "=" * 60)
     print(f"Created by {AUTHOR_NAME} | {AUTHOR_EMAIL}")

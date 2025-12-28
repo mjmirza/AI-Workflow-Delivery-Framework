@@ -59,8 +59,12 @@ logs/
 .env.local
 .env.*.local
 
-# Node (if any)
+# Node
 node_modules/
+package-lock.json
+
+# Mermaid cache
+.mermaid_cache/
 
 # Build outputs
 *.bak
