@@ -24,6 +24,12 @@
 
 ---
 
+> **Note: PDF Diagram Viewing**
+>
+> The generated PDF files in this repository may have difficulty displaying Mermaid diagrams correctly. For the best experience viewing flowcharts and diagrams, we recommend browsing the `.md` (Markdown) files directly in this repository where diagrams render natively.
+
+---
+
 ## Complete Professional Standards for n8n Automation Consultants
 
 ```
