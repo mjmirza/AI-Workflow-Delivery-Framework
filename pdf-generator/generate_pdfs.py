@@ -46,49 +46,53 @@ MERMAID_CLI = SCRIPT_DIR / "node_modules" / ".bin" / "mmdc"
 MERMAID_CACHE_DIR = SCRIPT_DIR / ".mermaid_cache"
 
 
-def get_mermaid_svg(mermaid_code: str) -> str:
-    """Convert Mermaid code to SVG using local CLI."""
+def get_mermaid_png(mermaid_code: str) -> str:
+    """Convert Mermaid code to PNG using local CLI and return as base64 data URI."""
 
     # Create cache directory
     MERMAID_CACHE_DIR.mkdir(exist_ok=True)
 
     # Create cache key
     cache_key = hashlib.md5(mermaid_code.encode()).hexdigest()
-    cache_file = MERMAID_CACHE_DIR / f"{cache_key}.svg"
-
-    # Check cache
-    if cache_file.exists():
-        return cache_file.read_text()
+    cache_file = MERMAID_CACHE_DIR / f"{cache_key}.png"
 
     try:
-        # Write mermaid code to temp file
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.mmd', delete=False) as f:
-            f.write(mermaid_code)
-            input_file = f.name
-
-        output_file = tempfile.mktemp(suffix='.svg')
-
-        # Run mmdc
-        result = subprocess.run(
-            [str(MERMAID_CLI), '-i', input_file, '-o', output_file, '-b', 'transparent'],
-            capture_output=True,
-            text=True,
-            timeout=60
-        )
-
-        # Clean up input file
-        os.unlink(input_file)
-
-        if result.returncode == 0 and os.path.exists(output_file):
-            svg_content = Path(output_file).read_text()
-            os.unlink(output_file)
-
-            # Cache result
-            cache_file.write_text(svg_content)
-            return svg_content
+        # Check cache
+        if cache_file.exists():
+            png_data = cache_file.read_bytes()
         else:
-            print(f"      Mermaid CLI error: {result.stderr[:200] if result.stderr else 'Unknown error'}")
-            raise Exception("Mermaid CLI failed")
+            # Write mermaid code to temp file
+            with tempfile.NamedTemporaryFile(mode='w', suffix='.mmd', delete=False) as f:
+                f.write(mermaid_code)
+                input_file = f.name
+
+            output_file = tempfile.mktemp(suffix='.png')
+
+            # Run mmdc with PNG output and white background for better visibility
+            result = subprocess.run(
+                [str(MERMAID_CLI), '-i', input_file, '-o', output_file, '-b', 'white', '-s', '2'],
+                capture_output=True,
+                text=True,
+                timeout=60
+            )
+
+            # Clean up input file
+            os.unlink(input_file)
+
+            if result.returncode == 0 and os.path.exists(output_file):
+                png_data = Path(output_file).read_bytes()
+                os.unlink(output_file)
+
+                # Cache result
+                cache_file.write_bytes(png_data)
+            else:
+                print(f"      Mermaid CLI error: {result.stderr[:200] if result.stderr else 'Unknown error'}")
+                raise Exception("Mermaid CLI failed")
+
+        # Convert to base64 data URI
+        import base64
+        b64_data = base64.b64encode(png_data).decode('utf-8')
+        return f'<img src="data:image/png;base64,{b64_data}" style="max-width:100%;height:auto;" />'
 
     except Exception as e:
         print(f"      Warning: Could not render Mermaid diagram: {e}")
@@ -96,23 +100,23 @@ def get_mermaid_svg(mermaid_code: str) -> str:
         escaped_code = mermaid_code.replace('<', '&lt;').replace('>', '&gt;')
         return f'''<div style="background:#f8f9fa;border:2px solid #e1e4e8;padding:20px;margin:20px 0;border-radius:8px;">
             <p style="color:#0366d6;font-weight:bold;margin-bottom:10px;">Flowchart Diagram</p>
-            <pre style="font-size:8pt;color:#24292e;white-space:pre-wrap;background:#fff;padding:15px;border-radius:4px;border:1px solid #e1e4e8;">{escaped_code}</pre>
+            <pre style="font-size:8pt;color:#24292e;white-space:pre-wrap;background:#fff;padding:15px;border-radius:4px;border:1px solid #e1e4e8;">{escaped_code[:500]}...</pre>
         </div>'''
 
 
-def convert_mermaid_to_svg(content: str) -> str:
-    """Find and convert all Mermaid code blocks to SVG images."""
+def convert_mermaid_to_images(content: str) -> str:
+    """Find and convert all Mermaid code blocks to PNG images."""
 
     # Pattern to match mermaid code blocks
     pattern = r'```mermaid\s*([\s\S]*?)```'
 
     def replace_mermaid(match):
         mermaid_code = match.group(1).strip()
-        svg = get_mermaid_svg(mermaid_code)
+        img_html = get_mermaid_png(mermaid_code)
 
-        # Wrap SVG in a container div for styling
+        # Wrap image in a container div for styling
         return f'''<div class="mermaid-diagram">
-            {svg}
+            {img_html}
         </div>'''
 
     return re.sub(pattern, replace_mermaid, content)
@@ -602,7 +606,7 @@ class EnterprisePDFGenerator:
         has_mermaid = '```mermaid' in content
         if has_mermaid:
             print(f"    Converting Mermaid diagrams...")
-            content = convert_mermaid_to_svg(content)
+            content = convert_mermaid_to_images(content)
 
         title, subtitle = self.extract_title(content)
         html_content, toc = self.convert_to_html(content)
@@ -703,7 +707,7 @@ class EnterprisePDFGenerator:
                 # Convert Mermaid diagrams
                 if '```mermaid' in content:
                     print(f"  Converting Mermaid in {md_file.name}...")
-                    content = convert_mermaid_to_svg(content)
+                    content = convert_mermaid_to_images(content)
 
                 all_content.append(f"\n\n---\n\n{content}")
 

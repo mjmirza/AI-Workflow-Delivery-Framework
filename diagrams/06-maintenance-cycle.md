@@ -243,7 +243,7 @@ flowchart TB
         P5["Document any changes"]
     end
 
-    subgraph DECISION{"All Tests Pass?"}
+    subgraph DECISION["All Tests Pass?"]
     end
 
     subgraph DEPLOY[" Deploy"]

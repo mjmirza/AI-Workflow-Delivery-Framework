@@ -285,7 +285,7 @@ flowchart TB
         R4["Validate outputs"]
     end
 
-    subgraph DECISION{"All Criteria Met?"}
+    subgraph DECISION["All Criteria Met?"]
     end
 
     subgraph ACCEPTED[" ACCEPTED"]

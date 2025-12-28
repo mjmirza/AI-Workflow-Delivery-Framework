@@ -111,7 +111,7 @@ flowchart TB
         VAL5["Parse & Validate Payload"]
     end
 
-    subgraph DECISION{" Valid?"}
+    subgraph DECISION[" Valid?"]
     end
 
     subgraph ACCEPT[" Accept"]

@@ -329,7 +329,7 @@ flowchart TB
         CL5["Archive project"]
     end
 
-    subgraph RETAINER_DECISION{"Ongoing Retainer?"}
+    subgraph RETAINER_DECISION["Ongoing Retainer?"]
     end
 
     subgraph RETAINER_YES[" Maintenance Retainer"]
