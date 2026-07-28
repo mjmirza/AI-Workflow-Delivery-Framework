@@ -428,7 +428,7 @@ because it removes long lived AWS keys from the credential store.
 
 ## Cross references
 
-- `GAP-ANALYSIS-2026.md` for the full findings register behind this guide
+- `docs/GAP-ANALYSIS-2026.md` for the full findings register behind this guide
 - `guides/02-security-implementation.md` for the credential posture
 - `guides/05-handover-delivery.md` for the handover package
 
