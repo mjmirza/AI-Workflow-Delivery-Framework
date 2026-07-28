@@ -1,7 +1,55 @@
-MIT License
+# License
 
-Copyright (c) 2025 Mirza Iqbal
+This repository is dual licensed. Documentation and code carry different terms
+because they are different kinds of work.
 
+## Documentation, templates, checklists, guides, diagrams and processes
+
+Copyright (c) 2025 to 2026 Mirza Iqbal
+
+Licensed under the **Creative Commons Attribution 4.0 International License**
+(CC BY 4.0).
+
+This covers everything in this repository except the `pdf-generator/` directory,
+including but not limited to `checklists/`, `diagrams/`, `guides/`, `processes/`,
+`templates/`, `templates-html/`, `research/`, `README.md` and every other
+Markdown file.
+
+You are free to:
+
+- **Share**, copy and redistribute the material in any medium or format
+- **Adapt**, remix, transform and build upon the material for any purpose,
+  including commercially
+
+Under the following terms:
+
+- **Attribution.** You must give appropriate credit, provide a link to the
+  license, and indicate if changes were made. You may do so in any reasonable
+  manner, but not in any way that suggests the licensor endorses you or your use.
+- **No additional restrictions.** You may not apply legal terms or technological
+  measures that legally restrict others from doing anything the license permits.
+
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+Human readable summary: https://creativecommons.org/licenses/by/4.0/
+
+### Suggested attribution
+
+> Based on the AI Workflow Delivery Framework by Mirza Iqbal, licensed under
+> CC BY 4.0. https://github.com/mjmirza/AI-Workflow-Delivery-Framework
+
+## Software in `pdf-generator/`
+
+Copyright (c) 2025 to 2026 Mirza Iqbal
+
+Licensed under the **MIT License**.
+
+Creative Commons explicitly recommends against using CC licenses for software,
+because CC licenses do not address source code distribution, patent rights, or
+warranty disclaimers the way software licenses do. The PDF generation tooling is
+therefore MIT licensed so it can be used, modified and redistributed without
+ambiguity.
+
+```
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -19,3 +67,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
+
+## What this license is not
+
+Nothing in this repository is legal advice. The contract templates, clause
+language, compliance checklists and regulatory summaries are starting points
+written by a practitioner, not by a lawyer. Every legal artifact here must be
+reviewed by qualified counsel in the relevant jurisdiction before it is used in
+a real engagement. Regulatory dates and obligations change. Verify against the
+primary source before relying on any date printed in this repository.
