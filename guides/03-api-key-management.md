@@ -113,7 +113,10 @@ BILLING TIPS:
 - Set monthly budget limit
 - Set usage alerts
 - Monitor dashboard regularly
-- Start with GPT-3.5 before GPT-4
+- Start on the cheapest model that passes your evaluation set, then move up only
+  where the scores require it
+- Record which model version you are on. It has a retirement date set by the
+  provider, not by you. See the Model Register in `templates/10-ai-maintenance-addendum.md`
 ```
 
 ### Anthropic (Claude)
@@ -389,7 +392,7 @@ FOR OTHER SERVICES:
 MONTHLY COST ESTIMATE
 
 Service: OpenAI
-Model: GPT-4
+Model: [current model id, with its published retirement date]
 Estimated requests/month: 1,000
 Average tokens per request: 2,000
 Estimated cost: ~$X/month
