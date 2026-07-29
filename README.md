@@ -1,544 +1,329 @@
-# Workflow Automation Delivery Framework
+# AI Workflow Delivery Framework
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Code MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub last commit](https://img.shields.io/github/last-commit/mjmirza/AI-Workflow-Delivery-Framework.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework/commits/main)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework/graphs/commit-activity)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework/pulls)
-[![Made with Love](https://img.shields.io/badge/Made%20with-Love-red.svg)](https://next8n.com)
-[![n8n](https://img.shields.io/badge/n8n-Workflow%20Automation-orange?logo=n8n&logoColor=white)](https://n8n.io)
-[![Documentation](https://img.shields.io/badge/Documentation-Complete-blue.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework#readme)
-[![Enterprise Ready](https://img.shields.io/badge/Enterprise-Ready-success.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework)
+[![n8n](https://img.shields.io/badge/n8n-2.x-orange?logo=n8n&logoColor=white)](https://n8n.io)
+[![Sources](https://img.shields.io/badge/Sources-Primary%20and%20Dated-blue.svg)](docs/GAP-ANALYSIS-2026.md)
 
----
+**Professional delivery standards for n8n automation and AI consultants.**
+Version 3.0. Last research pass 2026-07-28.
 
-### Quick Access Templates (Google Docs)
+## What you get
 
-| # | Template | Direct Link |
-|---|----------|-------------|
-| 01 | Master Checklist | [Open in Google Docs](https://docs.google.com/document/d/1ELsx36O76iHUsE-AgqRCQZsANT5HBTCu/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
-| 02 | Standard Operating Procedure | [Open in Google Docs](https://docs.google.com/document/d/1l4ZiUPUJh_Mab6PhTL7EMyVMH-MqJpCr/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
-| 03 | Client Onboarding Template | [Open in Google Docs](https://docs.google.com/document/d/1sLmUd-LtZA4KJ5dUI1wLhfW9MS6XMDA_/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
-| 04 | Security Audit Checklist | [Open in Google Docs](https://docs.google.com/document/d/1vVUjvPYesw7gZDqAgsRLDYXpYkcaFaIY/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
-| 05 | API Key Setup Guide | [Open in Google Docs](https://docs.google.com/document/d/13sajDpMGBo96LfKIGgyOvxqhEpDjZ21-/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
-| 06 | Maintenance Retainer Template | [Open in Google Docs](https://docs.google.com/document/d/1z2ajbo7I6_M-Gdsd8-JjITTp666aHlxQ/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
+Not a tutorial. A set of artifacts you hand to a client, a lawyer, or a works
+council, plus a set of gates you can fail before you have spent the client's
+money.
 
----
+- **Fail a project before you sell it.** The Scoping Gate runs in half a day and
+  catches the four things that cannot be retrofitted once a build starts. Two are
+  legal, and one has killed German projects at rollout after the invoice was
+  already paid.
+- **Say who pays when a security patch breaks the build.** Vendors ship severe
+  vulnerabilities. Patching forces an upgrade. The upgrade breaks delivered
+  workflows. Most retainers are silent on this. Template 10 is not.
+- **Sign an acceptance clause you can survive.** Deterministic acceptance
+  language on a probabilistic component is an unbounded warranty. There is
+  drafting language here that splits the two.
+- **Quote a platform without a licence surprise.** The tier-fit matrix tells you
+  at scoping time which plan the SOW actually requires, rather than at delivery.
+- **Cite dates that are real.** Every regulatory claim carries a source and an
+  evidence grade. Anything unconfirmed is marked and must not reach a client.
 
-> **Note: PDF Diagram Viewing**
->
-> The generated PDF files in this repository may have difficulty displaying Mermaid diagrams correctly. For the best experience viewing flowcharts and diagrams, we recommend browsing the `.md` (Markdown) files directly in this repository where diagrams render natively.
+## The five-minute version
 
----
+If you read nothing else, read these three.
 
-## Complete Professional Standards for n8n Automation Consultants
+1. **[checklists/07-scoping-gate.md](checklists/07-scoping-gate.md)** before you sign anything.
+2. **[guides/12-n8n-platform-reality-2026.md](guides/12-n8n-platform-reality-2026.md)** section 1, on platform licensing. Many agencies are in breach without knowing.
+3. **[templates/10-ai-maintenance-addendum.md](templates/10-ai-maintenance-addendum.md)** clause 1, the security patch obligation.
 
-```
-+==============================================================================+
-|                                                                              |
-|               WORKFLOW AUTOMATION DELIVERY FRAMEWORK                         |
-|               Professional Standards & Best Practices                        |
-|                                                                              |
-|               Version 2.0 | Enterprise-Ready                                 |
-|                                                                              |
-+==============================================================================+
-```
+## What changed in 2026
 
-## Table of Contents
+Version 2.0 was written for deterministic integration delivery. That is still the
+billable core, and it gets more important under AI agents rather than less. But
+four things moved underneath it, and version 3.0 exists because of them.
 
-1. [Framework Overview](#framework-overview)
-2. [Getting Started](#getting-started)
-3. [Directory Structure](#directory-structure)
-4. [Core Principles](#core-principles)
-5. [Document Index](#document-index)
-6. [Quick Reference Paths](#quick-reference-paths)
-7. [Framework Changelog](#framework-changelog)
+| What moved | Why it matters to a delivery contract |
+|---|---|
+| **Platform licensing** | Hosting a client's workflows and credentials on your own instance is an Enterprise-licence scenario by the vendor's own answer. Building on the client's instance is not. |
+| **Security posture** | Multiple CVSS 10.0 remote code execution flaws shipped in 2026, one unauthenticated. A shared instance turns one compromise into a cross-client breach. |
+| **Acceptance criteria** | Probabilistic components cannot be accepted on binary functional test. They need a frozen evaluation set and a statistical threshold. |
+| **Regulatory calendar** | EU AI Act Article 50 transparency applies from 2026-08-02. Annex III high-risk was deferred to 2027-12-02 by the Digital Omnibus. Product liability for software delivered as a service turns strict on 2026-12-09. |
 
----
+The full findings register, with evidence grades and named weaknesses, is in
+**[docs/GAP-ANALYSIS-2026.md](docs/GAP-ANALYSIS-2026.md)**.
 
-## Framework Overview
+## Who this is for
 
-This comprehensive framework provides everything needed to professionally deliver workflow automations to clients using n8n. It covers the complete business lifecycle from lead generation through project completion, ongoing maintenance, and client offboarding.
+| Role | What to read first |
+|---|---|
+| Automation consultant | Scoping Gate, then guides 01 to 07 |
+| Agency owner | Gap analysis, then guide 12 section 1 |
+| Freelance developer | Guide 10 workflow standards, guide 04 testing |
+| Technical project manager | Checklists 01 to 06 |
+| Sales | Templates 01, 06, 09, plus guide 08 pricing |
+| Legal review | Templates 02, 03, 10, plus the Scoping Gate |
 
-### Who This Framework Is For
+## Quick access templates (Google Docs)
 
-| Role | Primary Use |
-|------|-------------|
-| **Automation Consultants** | End-to-end project delivery |
-| **Agency Owners** | Scaling delivery operations |
-| **Freelance Developers** | Professional client management |
-| **Technical Project Managers** | Coordinating automation projects |
-| **Sales Teams** | Proposals, contracts, client communication |
-| **Support Teams** | Maintenance, troubleshooting, offboarding |
+| # | Template | Link |
+|---|---|---|
+| 01 | Master Checklist | [Open](https://docs.google.com/document/d/1ELsx36O76iHUsE-AgqRCQZsANT5HBTCu/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
+| 02 | Standard Operating Procedure | [Open](https://docs.google.com/document/d/1l4ZiUPUJh_Mab6PhTL7EMyVMH-MqJpCr/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
+| 03 | Client Onboarding Template | [Open](https://docs.google.com/document/d/1sLmUd-LtZA4KJ5dUI1wLhfW9MS6XMDA_/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
+| 04 | Security Audit Checklist | [Open](https://docs.google.com/document/d/1vVUjvPYesw7gZDqAgsRLDYXpYkcaFaIY/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
+| 05 | API Key Setup Guide | [Open](https://docs.google.com/document/d/13sajDpMGBo96LfKIGgyOvxqhEpDjZ21-/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
+| 06 | Maintenance Retainer Template | [Open](https://docs.google.com/document/d/1z2ajbo7I6_M-Gdsd8-JjITTp666aHlxQ/edit?usp=sharing&ouid=113709258208959967521&rtpof=true&sd=true) |
 
-### What's Included
+> **PDF diagram viewing.** The generated PDFs may not render Mermaid diagrams
+> correctly. For flowcharts, browse the `.md` files directly in this repository
+> where diagrams render properly.
 
-```
-+------------------+------------------------------------------+
-| CATEGORY         | CONTENTS                                 |
-+------------------+------------------------------------------+
-| Diagrams         | Architecture, flow, process maps         |
-|                  | (Mermaid format for easy rendering)      |
-+------------------+------------------------------------------+
-| Checklists       | Pre-flight, QA, handover, security       |
-|                  | (200+ checkpoint items)                  |
-+------------------+------------------------------------------+
-| Guides           | Onboarding, security, testing, delivery  |
-|                  | (Step-by-step procedures)                |
-+------------------+------------------------------------------+
-| Processes/SOPs   | Role-based standard operating procedures |
-|                  | (7 team roles covered)                   |
-+------------------+------------------------------------------+
-| Templates        | Contracts, proposals, invoices, emails   |
-|                  | (MD + HTML formats for PDF export)       |
-+------------------+------------------------------------------+
-```
-
-### Framework Benefits
-
-- **Consistency**: Standardized processes across all projects
-- **Scalability**: Delegate confidently with documented procedures
-- **Professionalism**: Client-ready templates and communication
-- **Risk Reduction**: Security checklists and QA frameworks
-- **Knowledge Retention**: Team members can onboard quickly
-
----
-
-## Getting Started
-
-### First-Time Setup
+## Repository structure
 
 ```
-STEP 1: Read Core Documents
-         +-> README.md (this file)
-         +-> diagrams/01-master-architecture.md
-         +-> processes/00-sop-master-index.md
-
-STEP 2: Customize Templates
-         +-> templates/00-template-index.md
-         +-> Replace all [PLACEHOLDERS] with your info
-         +-> Add your branding
-
-STEP 3: Train Your Team
-         +-> Assign role-specific SOPs
-         +-> Review relevant checklists
-         +-> Practice with sample projects
+checklists/     7 phase checklists, including the Scoping Gate
+diagrams/       6 Mermaid architecture and lifecycle diagrams
+guides/         12 delivery guides, onboarding through platform reality
+processes/      7 role SOPs, lead gen through client
+templates/      10 commercial and legal templates
+templates-html/ 5 print-ready HTML versions
+docs/           Gap analysis and research output
+pdf-generator/  Python tooling that builds the PDF set
+generated-pdfs/ Pre-built PDFs of everything above
 ```
 
-### Quick Start by Scenario
+## Document index
 
-#### Starting a New Project
+**Checklists**
+
+| # | Document | Use |
+|---|---|---|
+| 01 | Master checklist | The whole lifecycle in one page |
+| 02 | Pre-project | Setup before build |
+| 03 | Security | Credential and access posture |
+| 04 | QA and testing | Before the client sees it |
+| 05 | Handover | The day-one operator test |
+| 06 | Offboarding | Clean exit |
+| **07** | **Scoping Gate** | **Before the SOW. New in 3.0.** |
+
+**Guides**
+
+| # | Document |
+|---|---|
+| 01 | Client onboarding |
+| 02 | Security implementation |
+| 03 | API key management |
+| 04 | Testing and QA |
+| 05 | Handover and delivery |
+| 06 | Maintenance and retainer |
+| 07 | Offboarding |
+| 08 | Pricing and estimation |
+| 09 | Risk management |
+| 10 | Workflow standards |
+| 11 | Troubleshooting |
+| **12** | **n8n platform reality 2026. New in 3.0.** |
+
+**Templates**
+
+| # | Document |
+|---|---|
+| 01 | Scope of work |
+| 02 | Contract |
+| 03 | Retainer agreement |
+| 04 | Invoice |
+| 05 | Email templates |
+| 06 | Proposal |
+| 07 | Project brief |
+| 08 | Handover document |
+| 09 | Change order |
+| **10** | **AI and maintenance addendum. New in 3.0.** |
+
+**Processes.** Seven role SOPs covering lead generation, sales, closing, project
+management, technical lead, developer and client.
+
+## Find it by task
+
 ```
-1. guides/01-client-onboarding-guide.md     [Onboarding process]
-2. diagrams/02-hosting-decision-tree.md     [Hosting decision]
-3. templates/01-scope-of-work-template.md   [Create SOW]
-4. templates/02-contract-template.md        [Contract]
-5. checklists/02-pre-project-checklist.md   [Pre-flight checks]
+"I need to..."                          "Use this..."
+----------------------------------------+--------------------------------------
+Decide whether to take the project      | checklists/07-scoping-gate
+Check if a works council must agree     | checklists/07-scoping-gate GATE 2
+Decide if it should even be AI          | checklists/07-scoping-gate GATE 4
+Qualify a new lead                      | checklists/02-pre-project-checklist
+Write a proposal                        | templates/06-proposal-template
+Create a contract                       | templates/02-contract-template
+Add AI and patch clauses to a retainer  | templates/10-ai-maintenance-addendum
+Estimate project pricing                | guides/08-pricing-estimation-guide
+Assess project risks                    | guides/09-risk-management-guide
+Onboard a new client                    | guides/01-client-onboarding-guide
+Set up credentials securely             | guides/03-api-key-management
+Follow workflow standards               | guides/10-workflow-standards-guide
+Test my workflow                        | guides/04-testing-qa-framework
+Check the platform tier a SOW needs     | guides/12-n8n-platform-reality-2026
+Plan an n8n 2.x migration               | guides/12-n8n-platform-reality-2026
+Do a security audit                     | checklists/03-security-checklist
+Troubleshoot an issue                   | guides/11-troubleshooting-guide
+Handle scope change                     | templates/09-change-order-template
+Deliver to client                       | guides/05-handover-delivery
+Set up ongoing support                  | guides/06-maintenance-retainer
+End a client relationship               | guides/07-offboarding-guide
 ```
 
-#### Building & Testing
+## Getting started
+
+**First-time setup**
+
+```
+STEP 1: Read the core documents
+        +-> README.md, this file
+        +-> checklists/07-scoping-gate.md
+        +-> diagrams/01-master-architecture.md
+        +-> processes/00-sop-master-index.md
+
+STEP 2: Customize the templates
+        +-> templates/00-template-index.md
+        +-> Replace every [PLACEHOLDER] with your own detail
+        +-> Add your branding
+        +-> Have counsel review templates 02, 03 and 10 before use
+
+STEP 3: Train the team
+        +-> Assign the role-specific SOPs
+        +-> Walk the Scoping Gate on a past project as a dry run
+        +-> Practise on a sample project
+```
+
+**Starting a new project**
+
+```
+1. checklists/07-scoping-gate.md            [Run this first. It can say no]
+2. guides/01-client-onboarding-guide.md     [Onboarding]
+3. diagrams/02-hosting-decision-tree.md     [Hosting decision]
+4. templates/01-scope-of-work-template.md   [SOW]
+5. templates/02-contract-template.md        [Contract]
+6. templates/10-ai-maintenance-addendum.md  [If any AI component exists]
+7. checklists/02-pre-project-checklist.md   [Pre-flight]
+```
+
+**Building and testing**
+
 ```
 1. guides/02-security-implementation.md     [Security setup]
-2. guides/04-testing-qa-framework.md        [QA process]
-3. checklists/03-security-checklist.md      [Security audit]
-4. checklists/04-qa-testing-checklist.md    [QA verification]
+2. guides/12-n8n-platform-reality-2026.md   [Platform constraints and tier fit]
+3. guides/04-testing-qa-framework.md        [QA]
+4. checklists/03-security-checklist.md      [Security audit]
+5. checklists/04-qa-testing-checklist.md    [QA verification]
 ```
 
-#### Delivering to Client
-```
-1. guides/05-handover-delivery.md           [Delivery process]
-2. checklists/05-handover-checklist.md      [Delivery items]
-3. templates/08-handover-document-template.md [Handover doc]
-4. templates/05-email-templates.md          [Communication]
-```
-
-#### Ongoing Support
-```
-1. guides/06-maintenance-retainer.md        [Retainer setup]
-2. templates/03-retainer-agreement-template.md [Agreement]
-3. diagrams/06-maintenance-cycle.md         [Support workflow]
-```
-
-#### Ending a Client Relationship
-```
-1. guides/07-offboarding-guide.md           [Exit process]
-2. checklists/06-offboarding-checklist.md   [Exit items]
-```
-
----
-
-## Directory Structure
+**Delivering to the client**
 
 ```
-Workflow-Automation-Delivery-Framework/
-|
-+-- README.md                                 # This file
-|
-+-- diagrams/                                 # Visual process maps (Mermaid)
-|   +-- 01-master-architecture.md             # Complete system architecture
-|   +-- 02-hosting-decision-tree.md           # Hosting options flowchart
-|   +-- 03-project-lifecycle.md               # End-to-end project flow
-|   +-- 04-security-framework.md              # Security architecture
-|   +-- 05-handover-process.md                # Delivery workflow
-|   +-- 06-maintenance-cycle.md               # Ongoing support flow
-|
-+-- checklists/                               # Verification checklists
-|   +-- 01-master-checklist.md                # Complete project checklist
-|   +-- 02-pre-project-checklist.md           # Before starting
-|   +-- 03-security-checklist.md              # Security requirements
-|   +-- 04-qa-testing-checklist.md            # Quality assurance
-|   +-- 05-handover-checklist.md              # Delivery items
-|   +-- 06-offboarding-checklist.md           # Project close-out
-|
-+-- guides/                                   # Detailed how-to guides
-|   +-- 01-client-onboarding-guide.md         # Complete onboarding
-|   +-- 02-security-implementation.md         # Security best practices
-|   +-- 03-api-key-management.md              # Credential handling
-|   +-- 04-testing-qa-framework.md            # Testing methodology
-|   +-- 05-handover-delivery.md               # Professional delivery
-|   +-- 06-maintenance-retainer.md            # Ongoing support
-|   +-- 07-offboarding-guide.md               # Graceful exit
-|   +-- 08-pricing-estimation-guide.md        # Project pricing & estimation
-|   +-- 09-risk-management-guide.md           # Risk assessment & mitigation
-|   +-- 10-workflow-standards-guide.md        # Workflow development standards
-|   +-- 11-troubleshooting-guide.md           # Common issues & solutions
-|
-+-- processes/                                # Role-based SOPs
-|   +-- 00-sop-master-index.md                # Team structure overview
-|   +-- 01-sop-lead-gen-va.md                 # Lead generation VA
-|   +-- 02-sop-sales-rep.md                   # Sales representative
-|   +-- 03-sop-closer.md                      # Sales closer
-|   +-- 04-sop-project-manager.md             # Project manager
-|   +-- 05-sop-technical-lead.md              # Technical lead
-|   +-- 06-sop-developer.md                   # Developer
-|   +-- 07-sop-client.md                      # Client guide
-|
-+-- templates/                                # Business documents (Markdown)
-|   +-- 00-template-index.md                  # Template guide + conversion
-|   +-- 01-scope-of-work-template.md          # Project scope
-|   +-- 02-contract-template.md               # Service agreement
-|   +-- 03-retainer-agreement-template.md     # Ongoing support
-|   +-- 04-invoice-templates.md               # Billing documents
-|   +-- 05-email-templates.md                 # Communication scripts
-|   +-- 06-proposal-template.md               # Sales proposals
-|   +-- 07-project-brief-template.md          # Quick summary
-|   +-- 08-handover-document-template.md      # Delivery package
-|   +-- 09-change-order-template.md           # Scope change requests
-|
-+-- templates-html/                           # Print-ready HTML templates
-    +-- scope-of-work.html                    # SOW (print to PDF)
-    +-- contract.html                         # Contract (print to PDF)
-    +-- invoice.html                          # Invoice (print to PDF)
-    +-- proposal.html                         # Proposal (print to PDF)
-    +-- handover.html                         # Handover (print to PDF)
+1. guides/05-handover-delivery.md              [Delivery]
+2. checklists/05-handover-checklist.md         [Delivery items]
+3. templates/08-handover-document-template.md  [Handover doc]
 ```
 
----
+## Customizing this for your firm
 
-## Core Principles
+Before using any of it in a real engagement.
 
-### The 7 Pillars of Professional Delivery
+- Replace every `[PLACEHOLDER]` with your own detail
+- Put your own name, entity and jurisdiction into the legal templates
+- Set your own rates in Schedule A of the retainer and addendum
+- Set your own patch windows and thresholds in template 10. The bracketed
+  numbers there are starting points, not recommendations
+- Have qualified counsel review templates 02, 03 and 10 in your jurisdiction
+- Decide your own hosting position and write it into the SOW
 
-```
-+-----------------------------------------------------------------------------+
-|                                                                             |
-|   1. CLIENT HOSTS      Client owns their n8n instance                       |
-|   2. CLIENT PAYS       Client pays for all third-party services directly    |
-|   3. SECURITY FIRST    Credentials encrypted, webhooks hardened             |
-|   4. TEST THOROUGHLY   Use real data, plan for failure                      |
-|   5. DOCUMENT FULLY    Every workflow explained and labeled                 |
-|   6. CLEAN HANDOVER    Professional delivery with training                  |
-|   7. CLEAR SCOPE       Written agreements prevent scope creep               |
-|                                                                             |
-+-----------------------------------------------------------------------------+
-```
+**Converting to other formats.** The `pdf-generator/` directory builds the full
+PDF set from the Markdown. Print-ready HTML versions of the five most
+client-facing templates live in `templates-html/`.
 
-### Golden Rules
+## Diagrams
 
-| Rule | Description | Why It Matters |
-|------|-------------|----------------|
-| **Transparency** | Client sees all usage, all costs | Builds trust, avoids disputes |
-| **Ownership** | Client owns their infrastructure | Clean separation, no lock-in |
-| **Documentation** | Everything explained in writing | Enables handover, reduces support |
-| **Scope Protection** | Clear definition of done | Prevents unpaid work |
-| **Professional Exit** | Structured offboarding available | Shows confidence, builds trust |
+Six Mermaid diagrams covering master architecture, the hosting decision tree,
+the project lifecycle, the security framework, the handover process and the
+maintenance cycle. Browse the `.md` files directly rather than the PDFs, since
+Mermaid does not always survive PDF conversion.
 
-### Credential Security Model
+## Core principles
 
-```
-CLIENT OWNS AND PAYS FOR:
-+------------------------------------------+
-| - n8n subscription/hosting               |
-| - All third-party API accounts           |
-| - All usage costs                        |
-+------------------------------------------+
+1. **A gate is something you can fail.** If every check passes every time, it is
+   a form, not a gate.
+2. **Never automate a broken process.** Automating a 40% exception rate produces
+   an automation with a 40% exception rate and a maintenance bill on top.
+3. **Ask whether it should be AI at all.** Deterministic costs less to run, never
+   hallucinates, and can carry a real SLA. Reach for it first.
+4. **Capture the baseline before you touch anything.** That window opens once.
+5. **Silence is not health.** A working system reports that it is alive. Only
+   broken systems are quiet.
+6. **One instance per client.** Required by the licence, and required by blast
+   radius.
+7. **The client owns the credentials.** Always. Automations run under a named
+   service identity the client created.
+8. **Say what is unverified.** A cited claim with an honest gap beats a confident
+   claim that falls apart in front of a client.
 
-CONSULTANT PROVIDES:
-+------------------------------------------+
-| - Expertise and development              |
-| - Testing and quality assurance          |
-| - Documentation and training             |
-| - Time-limited support                   |
-+------------------------------------------+
+## Evidence standard
 
-CLEAN SEPARATION:
-+------------------------------------------+
-| - No billing pass-through                |
-| - No credential ownership                |
-| - Full handover possible at any time     |
-+------------------------------------------+
-```
+Every regulatory, pricing and platform claim in version 3.0 carries a grade.
 
----
+| Grade | Meaning |
+|---|---|
+| A | Primary source, quoted and linked |
+| B | Law firm, analyst or tier-one press, named and dated |
+| C | Secondary reporting, directionally useful |
+| U | Unverified. Do not put in front of a client |
 
-## Document Index
+Known weaknesses are listed openly at the end of the gap analysis, including
+which sources could not be reached and which figures should not be quoted.
 
-### Diagrams (Mermaid Format)
+## What is still to come
 
-| File | Description | When to Use |
-|------|-------------|-------------|
-| `01-master-architecture.md` | Complete system architecture | Project planning, client education |
-| `02-hosting-decision-tree.md` | Hosting decision flowcharts | Initial client discussions |
-| `03-project-lifecycle.md` | End-to-end project phases | Project planning, timeline setting |
-| `04-security-framework.md` | Security layers and data protection | Security reviews, audits |
-| `05-handover-process.md` | Delivery workflow | Preparing for handover |
-| `06-maintenance-cycle.md` | Ongoing support cycle | Retainer discussions |
+Version 3.0 is a partial pass. The research is complete and the highest-risk
+artifacts are written. These are specified in the gap analysis but not yet
+written.
 
-### Checklists
+- Works Council Readiness Pack, with a draft KI-Betriebsvereinbarung annex
+- Procurement Readiness Kit, TISAX and NIS2 supplier position
+- DORA Article 30 contract annex
+- Silent-failure checklist and the error-workflow conformance monitor
+- Model Register and Autonomy Matrix templates
+- Cost Model and Budget Guard
+- Heartbeat Register
+- Handover pack with per-workflow running cost notes
 
-| File | Items | Description |
-|------|-------|-------------|
-| `01-master-checklist.md` | 200+ | Complete project checklist (all phases) |
-| `02-pre-project-checklist.md` | 40+ | Before-you-start requirements |
-| `03-security-checklist.md` | 50+ | Security implementation |
-| `04-qa-testing-checklist.md` | 60+ | Quality assurance and testing |
-| `05-handover-checklist.md` | 30+ | Delivery and handover items |
-| `06-offboarding-checklist.md` | 25+ | Project close-out |
+## Contributing
 
-### Guides
+Issues and pull requests welcome. If you are correcting a fact, include the
+primary source and the date. If you are adding a regulatory claim, include the
+article or paragraph number.
 
-| File | Pages | Description |
-|------|-------|-------------|
-| `01-client-onboarding-guide.md` | ~15 | Complete client onboarding process |
-| `02-security-implementation.md` | ~12 | Security best practices |
-| `03-api-key-management.md` | ~14 | Credential and API key handling |
-| `04-testing-qa-framework.md` | ~18 | Testing methodology and QA |
-| `05-handover-delivery.md` | ~10 | Professional delivery process |
-| `06-maintenance-retainer.md` | ~12 | Ongoing support and retainer |
-| `07-offboarding-guide.md` | ~8 | Graceful exit process |
-| `08-pricing-estimation-guide.md` | ~20 | Project pricing and time estimation |
-| `09-risk-management-guide.md` | ~18 | Risk assessment and mitigation strategies |
-| `10-workflow-standards-guide.md` | ~16 | Workflow development best practices |
-| `11-troubleshooting-guide.md` | ~15 | Common issues and solutions |
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-### Standard Operating Procedures
+## Licence
 
-| File | Role | Responsibilities |
-|------|------|------------------|
-| `00-sop-master-index.md` | All | Team structure, handoff matrix |
-| `01-sop-lead-gen-va.md` | Lead Gen VA | Lead sourcing, outreach, qualification |
-| `02-sop-sales-rep.md` | Sales Rep | Discovery, relationship building |
-| `03-sop-closer.md` | Closer | Proposals, negotiations, contracts |
-| `04-sop-project-manager.md` | PM | Coordination, communication, billing |
-| `05-sop-technical-lead.md` | Tech Lead | Architecture, QA oversight |
-| `06-sop-developer.md` | Developer | Building, testing, documentation |
-| `07-sop-client.md` | Client | Client-facing responsibilities guide |
+Dual licensed.
 
-### Templates
+- **Documentation, templates, checklists, guides and diagrams.** Creative
+  Commons Attribution 4.0 International. Use it, adapt it, sell work built on it.
+  Keep the attribution.
+- **Code in `pdf-generator/`.** MIT.
 
-| File | Format | Purpose |
-|------|--------|---------|
-| `00-template-index.md` | MD | Template usage guide + conversion instructions |
-| `01-scope-of-work-template.md` | MD | Project scope definition |
-| `02-contract-template.md` | MD | Legal service agreement |
-| `03-retainer-agreement-template.md` | MD | Ongoing maintenance contract |
-| `04-invoice-templates.md` | MD | Deposit, final, retainer invoices |
-| `05-email-templates.md` | MD | Communication for all project stages |
-| `06-proposal-template.md` | MD | Sales proposal with pricing tiers |
-| `07-project-brief-template.md` | MD | One-page project summary |
-| `08-handover-document-template.md` | MD | Client delivery package |
-| `09-change-order-template.md` | MD | Scope change requests and approvals |
+Full terms in [LICENSE](LICENSE).
 
-### HTML Templates (Print-Ready)
+Suggested attribution.
 
-| File | Purpose | How to Use |
-|------|---------|------------|
-| `scope-of-work.html` | Professional SOW | Open in browser, print to PDF |
-| `contract.html` | Service agreement | Open in browser, print to PDF |
-| `invoice.html` | Client invoice | Open in browser, print to PDF |
-| `proposal.html` | Sales proposal | Open in browser, print to PDF |
-| `handover.html` | Delivery document | Open in browser, print to PDF |
+> Based on the AI Workflow Delivery Framework by Mirza Iqbal, licensed under
+> CC BY 4.0. https://github.com/mjmirza/AI-Workflow-Delivery-Framework
 
----
+## Not legal advice
 
-## Quick Reference Paths
-
-### By Project Phase
-
-```
-SALES PHASE
-+---------------------------------------------------------------------------+
-| Lead In     -> processes/01-sop-lead-gen-va.md                            |
-| Discovery   -> guides/01-client-onboarding-guide.md (Phase 1)             |
-| Proposal    -> templates/06-proposal-template.md                          |
-| Close       -> templates/02-contract-template.md                          |
-+---------------------------------------------------------------------------+
-
-DELIVERY PHASE
-+---------------------------------------------------------------------------+
-| Kickoff     -> guides/01-client-onboarding-guide.md (Phase 2)             |
-| Build       -> processes/06-sop-developer.md                              |
-| Test        -> guides/04-testing-qa-framework.md                          |
-| Security    -> checklists/03-security-checklist.md                        |
-| Deliver     -> guides/05-handover-delivery.md                             |
-+---------------------------------------------------------------------------+
-
-SUPPORT PHASE
-+---------------------------------------------------------------------------+
-| Retainer    -> templates/03-retainer-agreement-template.md                |
-| Maintain    -> guides/06-maintenance-retainer.md                          |
-| Exit        -> guides/07-offboarding-guide.md                             |
-+---------------------------------------------------------------------------+
-```
-
-### By Role
-
-```
-SALES TEAM
-+-- processes/01-sop-lead-gen-va.md
-+-- processes/02-sop-sales-rep.md
-+-- processes/03-sop-closer.md
-+-- templates/06-proposal-template.md
-+-- templates/05-email-templates.md
-
-PROJECT MANAGEMENT
-+-- processes/04-sop-project-manager.md
-+-- checklists/01-master-checklist.md
-+-- templates/01-scope-of-work-template.md
-+-- templates/04-invoice-templates.md
-
-TECHNICAL TEAM
-+-- processes/05-sop-technical-lead.md
-+-- processes/06-sop-developer.md
-+-- guides/02-security-implementation.md
-+-- guides/04-testing-qa-framework.md
-+-- checklists/03-security-checklist.md
-+-- checklists/04-qa-testing-checklist.md
-
-CLIENT-FACING
-+-- processes/07-sop-client.md
-+-- templates/08-handover-document-template.md
-```
-
-### By Task
-
-```
-"I need to..."                           "Use this..."
-------------------------------------------+---------------------------------
-Qualify a new lead                        | checklists/02-pre-project-checklist
-Write a proposal                          | templates/06-proposal-template
-Create a contract                         | templates/02-contract-template
-Send an invoice                           | templates/04-invoice-templates
-Estimate project pricing                  | guides/08-pricing-estimation-guide
-Assess project risks                      | guides/09-risk-management-guide
-Onboard a new client                      | guides/01-client-onboarding-guide
-Set up credentials securely               | guides/03-api-key-management
-Follow workflow standards                 | guides/10-workflow-standards-guide
-Test my workflow                          | guides/04-testing-qa-framework
-Do a security audit                       | checklists/03-security-checklist
-Troubleshoot an issue                     | guides/11-troubleshooting-guide
-Handle scope change                       | templates/09-change-order-template
-Deliver to client                         | guides/05-handover-delivery
-Set up ongoing support                    | guides/06-maintenance-retainer
-End a client relationship                 | guides/07-offboarding-guide
-```
-
----
-
-## Customization Guide
-
-### Before Using This Framework
-
-1. **Replace All Placeholders**
-   - `[YOUR COMPANY]` -> Your company name
-   - `[YOUR NAME]` -> Your name
-   - `[YOUR EMAIL]` -> Your email
-   - `$[X,XXX]` -> Your actual pricing
-
-2. **Add Your Branding**
-   - Logo to HTML templates
-   - Brand colors
-   - Contact information
-
-3. **Review Legal Terms**
-   - Have attorney review contracts
-   - Adjust for your jurisdiction
-   - Add required clauses
-
-4. **Set Your Processes**
-   - Adjust timelines to your workflow
-   - Modify checklists as needed
-   - Update communication templates
-
-### Converting Templates
-
-**Markdown to Word/PDF:**
-```bash
-# Install Pandoc
-brew install pandoc
-
-# Convert to Word
-pandoc template.md -o template.docx
-
-# Convert to PDF (requires LaTeX)
-pandoc template.md -o template.pdf
-```
-
-**HTML to PDF:**
-```
-1. Open .html file in browser
-2. Click "Print / Save as PDF" button
-   OR
-3. Press Ctrl+P / Cmd+P
-4. Select "Save as PDF"
-```
-
----
-
-## Framework Changelog
-
-| Version | Date | Changes |
-|---------|------|---------|
-| 2.0.0 | 2025-01 | Major update: Added HTML templates, expanded SOPs, enhanced security framework |
-| 1.0.0 | 2025-01 | Initial framework release |
-
----
-
-## Support & Contributions
-
-This framework is designed for professional use by automation consultants and agencies. Customize and adapt as needed for your specific business context.
-
-**Created by:** Mirza Iqbal
-**Contact:** mirza.iqbal@next8n.com
-**Website:** [next8n.com](https://next8n.com)
-
-### Recommended Reading Order
-
-For new users, we recommend reading in this order:
-
-1. This README (overview)
-2. `diagrams/01-master-architecture.md` (understand the system)
-3. `processes/00-sop-master-index.md` (understand team structure)
-4. Your role's specific SOP
-5. Relevant guides as needed
-
----
-
-```
-+==============================================================================+
-|                                                                              |
-|   START HERE: diagrams/01-master-architecture.md                             |
-|                                                                              |
-|   Questions? Refer to the relevant guide for your current project phase.    |
-|                                                                              |
-+==============================================================================+
-```
+The contract language, compliance checklists and regulatory summaries here are a
+practitioner's starting point, written by a practitioner and not by a lawyer.
+Every legal artifact needs review by qualified counsel in the relevant
+jurisdiction before it is used in a real engagement. Regulatory dates change.
+Verify against the primary source before relying on any date printed here.

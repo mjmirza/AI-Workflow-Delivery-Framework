@@ -69,3 +69,4 @@ package-lock.json
 # Build outputs
 *.bak
 *.orig
+.claude/

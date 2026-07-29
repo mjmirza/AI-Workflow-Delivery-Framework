@@ -139,7 +139,8 @@ Components:
 ## AI Components
 
 ### [AI Component Name]
-- Model: [GPT-4, Claude, etc.]
+- Model: [exact model id, provider, published retirement date]
+- Fallback model: [what we swap to when it is retired]
 - Purpose: [What it does]
 - Prompt strategy: [Brief description]
 - Expected output: [Format]
