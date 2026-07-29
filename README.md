@@ -85,11 +85,11 @@ The full findings register, with evidence grades and named weaknesses, is in
 ## Repository structure
 
 ```
-checklists/     7 phase checklists, including the Scoping Gate
+checklists/     8 phase checklists, including the Scoping Gate
 diagrams/       6 Mermaid architecture and lifecycle diagrams
 guides/         12 delivery guides, onboarding through platform reality
 processes/      7 role SOPs, lead gen through client
-templates/      10 commercial and legal templates
+templates/      12 commercial, legal and operational templates
 templates-html/ 5 print-ready HTML versions
 docs/           Gap analysis and research output
 pdf-generator/  Python tooling that builds the PDF set
@@ -109,6 +109,7 @@ generated-pdfs/ Pre-built PDFs of everything above
 | 05 | Handover | The day-one operator test |
 | 06 | Offboarding | Clean exit |
 | **07** | **Scoping Gate** | **Before the SOW. New in 3.0.** |
+| **08** | **Silent Failure** | **The nine ways a workflow dies quietly. New in 3.0.** |
 
 **Guides**
 
@@ -141,6 +142,8 @@ generated-pdfs/ Pre-built PDFs of everything above
 | 08 | Handover document |
 | 09 | Change order |
 | **10** | **AI and maintenance addendum. New in 3.0.** |
+| **11** | **Model Register and Autonomy Matrix. New in 3.0.** |
+| **12** | **Works Council Readiness Pack, DACH. New in 3.0.** |
 
 **Processes.** Seven role SOPs covering lead generation, sales, closing, project
 management, technical lead, developer and client.
@@ -165,6 +168,10 @@ Follow workflow standards               | guides/10-workflow-standards-guide
 Test my workflow                        | guides/04-testing-qa-framework
 Check the platform tier a SOW needs     | guides/12-n8n-platform-reality-2026
 Plan an n8n 2.x migration               | guides/12-n8n-platform-reality-2026
+Stop a workflow failing silently        | checklists/08-silent-failure
+Track model retirement dates            | templates/11-model-register-autonomy-matrix
+Decide what an agent may do alone       | templates/11-model-register-autonomy-matrix
+Handle a German works council           | templates/12-works-council-readiness
 Do a security audit                     | checklists/03-security-checklist
 Troubleshoot an issue                   | guides/11-troubleshooting-guide
 Handle scope change                     | templates/09-change-order-template
@@ -287,13 +294,9 @@ Version 3.0 is a partial pass. The research is complete and the highest-risk
 artifacts are written. These are specified in the gap analysis but not yet
 written.
 
-- Works Council Readiness Pack, with a draft KI-Betriebsvereinbarung annex
 - Procurement Readiness Kit, TISAX and NIS2 supplier position
 - DORA Article 30 contract annex
-- Silent-failure checklist and the error-workflow conformance monitor
-- Model Register and Autonomy Matrix templates
 - Cost Model and Budget Guard
-- Heartbeat Register
 - Handover pack with per-workflow running cost notes
 
 ## Contributing

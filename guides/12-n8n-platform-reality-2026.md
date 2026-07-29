@@ -51,6 +51,36 @@ writing before you sign a multi-tenant hosting arrangement.
 circulates on third party blogs. It appears on no n8n page this research could
 fetch. Do not quote it. Ask sales.
 
+### The Embed licence discrepancy, verified 2026-07-29
+
+n8n's two sources now disagree with each other, and you should know that before
+you rely on either.
+
+On **2026-04-08** n8n landed a commit on the licence documentation page whose
+subject was `fix(embed)`, removing the embed content and restructuring the page.
+The page moved again in a docs restructure on 2026-06-24. As of 2026-07-29 the
+[live licence page](https://docs.n8n.io/privacy-and-security/sustainable-use-license)
+lists three limitations and two examples lists, and **contains no mention of an
+Embed licence at all**. Under what is allowed it now says only this.
+
+> Embedding n8n as a backend when using company credentials, not user credentials
+
+Meanwhile the [support article](https://support.n8n.io/article/can-i-use-your-license-for-my-use-case)
+still states that embedding n8n into your product to manage client workflows and
+credentials means "a white-labeled Embed license would be necessary".
+
+Both `docs.n8n.io/embed/` and `n8n.io/oem/` still return HTTP 200.
+
+**What to do with that.** Do not present the Embed licence as settled either
+way. The three consultancy scenarios in the table above are still confirmed live
+on the support article, and those are safe to rely on. But for anything touching
+embedding or white-labelling, get the position **in writing from
+license@n8n.io** before you sign, and keep that email. A vendor whose own two
+pages disagree is a vendor whose verbal answer is worth nothing later.
+
+`LICENSE.md` in the n8n repository itself is unchanged since 2024-12-24, so the
+underlying licence text has not moved. What moved is how n8n explains it.
+
 ## 2. The n8n 2.0 cut, and why an upgrade is a paid engagement
 
 n8n 2.0 landed in December 2025. The changelog lists 2.0.0 on 2025-12-05, while
