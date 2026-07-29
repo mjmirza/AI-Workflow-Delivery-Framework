@@ -25,6 +25,96 @@ This guide provides a comprehensive framework for pricing workflow automation pr
 
 ## Part 1: Pricing Models
 
+### 1.0 Read this before anything else in Part 1
+
+**The four models in 1.1 were written for deterministic integration work. They
+still apply to it. They do not survive contact with an AI component, and
+applying them there is the most expensive drafting error available in 2026.**
+
+Two things break.
+
+**First, the cost base is no longer yours to control.** Model inference, API
+calls, platform executions, storage and egress are driven partly by the client's
+own volume and behaviour. A fixed price that silently absorbs them is a bet on
+someone else's usage. One documented incident had four agents in a loop burn a
+five-figure sum over eleven days.
+
+**Second, "done" is no longer binary.** You cannot write "the system shall
+correctly classify tickets" for a probabilistic component without signing an
+unbounded warranty. There is no version of that sentence that is both true and
+safe.
+
+#### 1.0.1 The split that fixes both
+
+Price the two halves differently, in the same engagement.
+
+| Half | Priced how | Accepted how | Service commitment |
+|---|---|---|---|
+| **Deterministic** | Fixed price, per the models in 1.1 | Binary functional test | SLA with credits |
+| **Probabilistic** | Fixed build fee, plus pass-through usage | Statistical threshold on a frozen evaluation set | SLO with remediation, no credits |
+
+The three-part shape for anything carrying an AI component.
+
+```
+FIXED BUILD FEE
+  Scoping, architecture, workflow build, credential hardening,
+  evaluation suite setup, documentation, handover.
+  Bounded work. Fixed price is correct here.
+
++ PASS-THROUGH CONSUMPTION
+  Inference, API, execution, storage, egress.
+  Billed to the client's own accounts, or recharged at cost
+  or cost plus a stated percentage. Never absorbed.
+
++ RETAINER
+  Patch obligation, model migration, evaluation drift monitoring,
+  cost anomaly watch. This is where the ongoing revenue lives.
+```
+
+#### 1.0.2 What this does to the fixed-price formula
+
+The formula in 1.2 stays, with one addition. It now prices **bounded build work
+only**, and the SOW must say so.
+
+```
+Fixed Build Fee = (Estimated Hours x Rate) x Risk Multiplier
+                  EXCLUDING all consumption costs
+```
+
+Put the exclusion in writing. A client who discovers the model bill afterwards
+remembers that, not the quality of the build.
+
+#### 1.0.3 Where fixed price still wins outright
+
+Do not over-correct. Fixed price remains the right answer for scoping and
+assessment, workflow migration, a platform version upgrade, environment and
+source control setup, credential hardening, evaluation suite setup, and
+documentation and handover. All of those are bounded, and a client buying them
+wants a number, not a meter.
+
+What fixed price cannot be is an **all-in operating price for open-ended agent
+usage**. That is the line.
+
+#### 1.0.4 On the cost conversation
+
+Consumption pricing reads as an increase if you present it as one. It is not.
+The spend exists either way. The only question is whether it is visible and
+governed, or invisible and absorbed into a number nobody can interrogate.
+
+Three things make that conversation straightforward.
+
+- **The client's own accounts, from day one.** They see the real figure in their
+  own billing from the first week. Nobody is marking anything up in the dark.
+- **A budget limit configured before go-live**, with an alert at 80 percent. The
+  client sets the upper bound, so the downside is bounded by their decision
+  rather than by your estimate.
+- **A cost-per-outcome baseline** recorded at acceptance. That turns spend from
+  an abstract worry into a unit figure they can hold against the manual process
+  the automation replaced.
+
+A client who has a limit, an alert and a unit cost does not worry about spend. A
+client handed a number with no controls attached does, and rightly.
+
 ### 1.1 Model Comparison Overview
 
 | Model | Best For | Risk Level | Profit Potential | Client Trust Required |
@@ -33,6 +123,7 @@ This guide provides a comprehensive framework for pricing workflow automation pr
 | **Hourly Rate** | Unclear scope, ongoing work | Lower (you) | Predictable | Lower |
 | **Value-Based** | High-impact projects, enterprise | Highest (shared) | Highest | Highest |
 | **Hybrid** | Complex projects with unknowns | Balanced | Good | Medium |
+| **Build plus consumption plus retainer** | **Anything carrying an AI component. See 1.0** | **Balanced** | **Recurring** | **Medium** |
 
 ---
 
