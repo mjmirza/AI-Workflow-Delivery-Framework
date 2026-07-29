@@ -173,6 +173,82 @@ Set up ongoing support                  | guides/06-maintenance-retainer
 End a client relationship               | guides/07-offboarding-guide
 ```
 
+## Getting started
+
+**First-time setup**
+
+```
+STEP 1: Read the core documents
+        +-> README.md, this file
+        +-> checklists/07-scoping-gate.md
+        +-> diagrams/01-master-architecture.md
+        +-> processes/00-sop-master-index.md
+
+STEP 2: Customize the templates
+        +-> templates/00-template-index.md
+        +-> Replace every [PLACEHOLDER] with your own detail
+        +-> Add your branding
+        +-> Have counsel review templates 02, 03 and 10 before use
+
+STEP 3: Train the team
+        +-> Assign the role-specific SOPs
+        +-> Walk the Scoping Gate on a past project as a dry run
+        +-> Practise on a sample project
+```
+
+**Starting a new project**
+
+```
+1. checklists/07-scoping-gate.md            [Run this first. It can say no]
+2. guides/01-client-onboarding-guide.md     [Onboarding]
+3. diagrams/02-hosting-decision-tree.md     [Hosting decision]
+4. templates/01-scope-of-work-template.md   [SOW]
+5. templates/02-contract-template.md        [Contract]
+6. templates/10-ai-maintenance-addendum.md  [If any AI component exists]
+7. checklists/02-pre-project-checklist.md   [Pre-flight]
+```
+
+**Building and testing**
+
+```
+1. guides/02-security-implementation.md     [Security setup]
+2. guides/12-n8n-platform-reality-2026.md   [Platform constraints and tier fit]
+3. guides/04-testing-qa-framework.md        [QA]
+4. checklists/03-security-checklist.md      [Security audit]
+5. checklists/04-qa-testing-checklist.md    [QA verification]
+```
+
+**Delivering to the client**
+
+```
+1. guides/05-handover-delivery.md              [Delivery]
+2. checklists/05-handover-checklist.md         [Delivery items]
+3. templates/08-handover-document-template.md  [Handover doc]
+```
+
+## Customizing this for your firm
+
+Before using any of it in a real engagement.
+
+- Replace every `[PLACEHOLDER]` with your own detail
+- Put your own name, entity and jurisdiction into the legal templates
+- Set your own rates in Schedule A of the retainer and addendum
+- Set your own patch windows and thresholds in template 10. The bracketed
+  numbers there are starting points, not recommendations
+- Have qualified counsel review templates 02, 03 and 10 in your jurisdiction
+- Decide your own hosting position and write it into the SOW
+
+**Converting to other formats.** The `pdf-generator/` directory builds the full
+PDF set from the Markdown. Print-ready HTML versions of the five most
+client-facing templates live in `templates-html/`.
+
+## Diagrams
+
+Six Mermaid diagrams covering master architecture, the hosting decision tree,
+the project lifecycle, the security framework, the handover process and the
+maintenance cycle. Browse the `.md` files directly rather than the PDFs, since
+Mermaid does not always survive PDF conversion.
+
 ## Core principles
 
 1. **A gate is something you can fail.** If every check passes every time, it is
