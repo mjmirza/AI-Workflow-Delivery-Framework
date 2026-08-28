@@ -1,5 +1,7 @@
 # AI Workflow Delivery Framework
 
+[![OpenRoots ORA 2.3](https://openroots.org/badge/ora.svg)](https://openroots.org/licenses/ora/2.3)
+
 [![License CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Code MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub last commit](https://img.shields.io/github/last-commit/mjmirza/AI-Workflow-Delivery-Framework.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework/commits/main)
