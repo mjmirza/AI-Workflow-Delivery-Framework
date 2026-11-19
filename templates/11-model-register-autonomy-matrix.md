@@ -147,4 +147,6 @@ that meeting. It converts an abstract fear into a reviewed control.
 - `templates/10-ai-maintenance-addendum.md` clause 2 for model migration terms
 - `checklists/08-silent-failure.md` for catching it when a tool stops working
 - `guides/12-n8n-platform-reality-2026.md` for the platform features referenced
+- `templates/13-cost-model-budget-guard.md` for the iteration cap as a spend
+  control, and for what to do when a run hits it
 - `docs/GAP-ANALYSIS-2026.md` sections 3.3 and 3.4 for the evidence

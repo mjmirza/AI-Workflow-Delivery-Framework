@@ -176,7 +176,9 @@ and not something a Supplier can responsibly absorb.
 
 **Note on runaway spend.** Agent loops are a documented failure mode capable of
 producing very large bills in a short period. Clause 5.3 is not paperwork, it is
-the control that stops it. Configure the limit before go-live, not after.
+the control that stops it. Configure the limit before go-live, not after. The
+steps, and the sheet the client signs, are in
+`templates/13-cost-model-budget-guard.md`.
 
 ## 6. Credential custody and offboarding
 
@@ -231,6 +233,7 @@ before signing a hosted arrangement.
 - `templates/03-retainer-agreement-template.md` for the base agreement
 - `checklists/07-scoping-gate.md` for the checks that precede signature
 - `guides/12-n8n-platform-reality-2026.md` for the platform facts behind clause 7
+- `templates/13-cost-model-budget-guard.md` for the sheet clause 5 points at
 - `docs/GAP-ANALYSIS-2026.md` for the evidence behind each clause
 
 ## Legal note

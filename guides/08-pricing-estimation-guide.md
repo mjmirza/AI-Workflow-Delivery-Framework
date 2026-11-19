@@ -115,6 +115,12 @@ Three things make that conversation straightforward.
 A client who has a limit, an alert and a unit cost does not worry about spend. A
 client handed a number with no controls attached does, and rightly.
 
+The working artifact is `templates/13-cost-model-budget-guard.md`. It is the
+sheet the client signs, and the list of controls that have to be on before
+go-live. Clause 5 of the maintenance addendum is the contract language that
+points at it. Fill the sheet from a measured sample. A limit that exists only
+in the contract is not a limit.
+
 ### 1.1 Model Comparison Overview
 
 | Model | Best For | Risk Level | Profit Potential | Client Trust Required |

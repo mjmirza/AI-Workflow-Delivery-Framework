@@ -91,7 +91,7 @@ checklists/     8 phase checklists, including the Scoping Gate
 diagrams/       6 Mermaid architecture and lifecycle diagrams
 guides/         12 delivery guides, onboarding through platform reality
 processes/      7 role SOPs, lead gen through client
-templates/      12 commercial, legal and operational templates
+templates/      13 commercial, legal and operational templates
 templates-html/ 5 print-ready HTML versions
 docs/           Gap analysis and research output
 pdf-generator/  Python tooling that builds the PDF set
@@ -146,6 +146,7 @@ generated-pdfs/ Pre-built PDFs of everything above
 | **10** | **AI and maintenance addendum. New in 3.0.** |
 | **11** | **Model Register and Autonomy Matrix. New in 3.0.** |
 | **12** | **Works Council Readiness Pack, DACH. New in 3.0.** |
+| **13** | **Cost Model and Budget Guard. New in 3.0.** |
 
 **Processes.** Seven role SOPs covering lead generation, sales, closing, project
 management, technical lead, developer and client.
@@ -174,6 +175,8 @@ Stop a workflow failing silently        | checklists/08-silent-failure
 Track model retirement dates            | templates/11-model-register-autonomy-matrix
 Decide what an agent may do alone       | templates/11-model-register-autonomy-matrix
 Handle a German works council           | templates/12-works-council-readiness
+Set a spend limit before go-live        | templates/13-cost-model-budget-guard
+Record cost per outcome                 | templates/13-cost-model-budget-guard
 Do a security audit                     | checklists/03-security-checklist
 Troubleshoot an issue                   | guides/11-troubleshooting-guide
 Handle scope change                     | templates/09-change-order-template
@@ -233,6 +236,7 @@ STEP 3: Train the team
 1. guides/05-handover-delivery.md              [Delivery]
 2. checklists/05-handover-checklist.md         [Delivery items]
 3. templates/08-handover-document-template.md  [Handover doc]
+4. templates/13-cost-model-budget-guard.md     [Spend limits and the signed unit cost]
 ```
 
 ## Customizing this for your firm
@@ -298,7 +302,6 @@ written.
 
 - Procurement Readiness Kit, TISAX and NIS2 supplier position
 - DORA Article 30 contract annex
-- Cost Model and Budget Guard
 - Handover pack with per-workflow running cost notes
 
 ## Contributing

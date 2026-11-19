@@ -16,6 +16,10 @@
 | 7 | Project Brief | Quick project summary | MD, HTML |
 | 8 | Handover Checklist | Delivery document | MD |
 | 9 | Change Order | Project scope modifications | MD |
+| 10 | AI and maintenance addendum | Patch, model and consumption clauses | MD |
+| 11 | Model Register and Autonomy Matrix | Model retirement and per-tool approval | MD |
+| 12 | Works Council Readiness Pack | German co-determination, DACH | MD |
+| 13 | Cost Model and Budget Guard | Spend limits and cost per outcome, before go-live | MD |
 
 ---
 
@@ -130,6 +134,12 @@ The `/templates-html/` folder contains styled HTML versions that:
 
 ### Change Management
 - `09-change-order-template.md` - Project scope modifications
+
+### AI operations
+- `10-ai-maintenance-addendum.md` - Clauses the retainer is missing
+- `11-model-register-autonomy-matrix.md` - What the model is, and what it may do
+- `12-works-council-readiness.md` - Betriebsrat trigger and briefing
+- `13-cost-model-budget-guard.md` - The limit, the alert, and the unit cost
 
 ---
 

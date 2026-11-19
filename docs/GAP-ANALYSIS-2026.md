@@ -199,9 +199,11 @@ of four agents in a loop burning 47,000 USD over 11 days, **Grade U at source**.
 
 n8n-specific and concrete. Cap `maxIterations` on the AI Agent node at 5 to 10.
 
-**Still open.** A Cost Model and Budget Guard deliverable. Per-use-case API key
-structure, hard spend limit, anomaly alert, and a documented cost-per-outcome
-baseline the retainer is measured against.
+**Closed by.** `templates/13-cost-model-budget-guard.md`, written 2026-11-19.
+One billing boundary per use case, a hard spend limit rather than an alert, a
+daily anomaly watch, the n8n iteration and timeout caps, and a cost-per-outcome
+baseline signed at acceptance. Provider caps are per project or workspace, not
+per key. That correction is in the template.
 
 ### 2.4 Baseline capture has one window and it closes immediately. Grade C
 
@@ -478,6 +480,7 @@ priced in. Do not build a general accessibility programme. Grade B.
 | `guides/12-n8n-platform-reality-2026.md` | Done |
 | `docs/GAP-ANALYSIS-2026.md`, this file | Done |
 | `research/` raw research reports | Done |
+| `templates/13-cost-model-budget-guard.md` | Done, 2026-11-19 |
 | Everything under "Still open" above | Specified, not written |
 
 This is stated plainly rather than implied. The research is complete and the

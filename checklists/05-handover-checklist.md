@@ -110,6 +110,11 @@
  Credential Inventory
     Format: Name | Service | Owner | Last Rotated
     Location: _____________________________
+
+ Cost Model and Budget Guard
+    Template: templates/13-cost-model-budget-guard.md
+    One row per workflow, hard limits on, baseline signed
+    Location: _____________________________
 ```
 
 ### Visual Assets
