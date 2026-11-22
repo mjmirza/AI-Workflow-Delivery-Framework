@@ -1811,4 +1811,4 @@ POST-MORTEM:
 
 ---
 
-**Next**: See `12-advanced-patterns.md` for complex workflow patterns.
+**Next**: See `12-n8n-platform-reality-2026.md` for the platform constraints behind production failures.

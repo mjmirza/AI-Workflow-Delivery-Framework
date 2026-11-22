@@ -42,6 +42,7 @@ Thank you for your interest in contributing to the AI Workflow Delivery Framewor
 3. **Reference related issues** - Link to any related GitHub issues
 4. **Keep changes focused** - One PR should address one concern
 5. **Update documentation** - If your changes require documentation updates
+6. **Keep links valid** - Pull requests fail when an internal link, heading anchor, backtick document path or numbered series is inconsistent. A `00-` index has to name every sibling document.
 
 ## Code Style
 

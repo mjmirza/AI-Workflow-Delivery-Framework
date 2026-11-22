@@ -116,7 +116,7 @@ BILLING TIPS:
 - Start on the cheapest model that passes your evaluation set, then move up only
   where the scores require it
 - Record which model version you are on. It has a retirement date set by the
-  provider, not by you. See the Model Register in `templates/10-ai-maintenance-addendum.md`
+  provider, not by you. See the Model Register in `templates/11-model-register-autonomy-matrix.md`
 ```
 
 ### Anthropic (Claude)

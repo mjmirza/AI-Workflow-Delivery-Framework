@@ -9,13 +9,16 @@
 |---|----------|---------|---------|
 | 1 | Scope of Work | Project definition & deliverables | MD, HTML |
 | 2 | Service Agreement | Legal contract | MD, HTML |
-| 3 | Retainer Agreement | Ongoing maintenance | MD, HTML |
+| 3 | Retainer Agreement | Ongoing maintenance | MD |
 | 4 | Invoice Templates | Billing documents | MD, HTML |
 | 5 | Email Templates | Communication scripts | MD |
 | 6 | Proposal Template | Sales proposals | MD, HTML |
-| 7 | Project Brief | Quick project summary | MD, HTML |
-| 8 | Handover Checklist | Delivery document | MD |
+| 7 | Project Brief | Quick project summary | MD |
+| 8 | Handover Document | Delivery document | MD, HTML |
 | 9 | Change Order | Project scope modifications | MD |
+| 10 | AI and Maintenance Addendum | Retainer terms for patches, models and acceptance | MD |
+| 11 | Model Register and Autonomy Matrix | Models in use, and what an agent may do alone | MD |
+| 12 | Works Council Readiness Pack | German works council trigger, draft and briefing | MD |
 
 ---
 
@@ -130,6 +133,11 @@ The `/templates-html/` folder contains styled HTML versions that:
 
 ### Change Management
 - `09-change-order-template.md` - Project scope modifications
+
+### Operations and governance
+- `10-ai-maintenance-addendum.md` - Retainer clauses for patches, models and acceptance
+- `11-model-register-autonomy-matrix.md` - Model register and autonomy matrix
+- `12-works-council-readiness.md` - Works council readiness pack
 
 ---
 

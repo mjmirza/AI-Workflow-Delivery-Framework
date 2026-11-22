@@ -1,0 +1,19 @@
+name: doc-links
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+      - name: Run doc link unit tests
+        run: python3 .github/scripts/test_check_doc_links.py
+      - name: Check internal links, anchors and numbering
+        run: python3 .github/scripts/check_doc_links.py
