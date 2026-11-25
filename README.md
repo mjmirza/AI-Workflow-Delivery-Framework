@@ -1,9 +1,6 @@
 # AI Workflow Delivery Framework
 
 [![OpenRoots ORA 2.3](https://openroots.org/badge/ora.svg)](https://openroots.org/licenses/ora/2.3)
-
-[![License CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Code MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub last commit](https://img.shields.io/github/last-commit/mjmirza/AI-Workflow-Delivery-Framework.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework/commits/main)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework/graphs/commit-activity)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/mjmirza/AI-Workflow-Delivery-Framework/pulls)
@@ -311,19 +308,38 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Licence
 
-Dual licensed.
+One licence covers this repository. The documentation, templates, checklists,
+guides, diagrams, processes and the code in `pdf-generator/` are under the
+[OpenRoots Agent License 2.3](https://openroots.org/licenses/ora/2.3)
+(SPDX `LicenseRef-OpenRoots-ORA-2.3`). [LICENSE](LICENSE) is a pointer. The
+canonical text at
+[openroots.org/licenses/ora/2.3/legalcode.txt](https://openroots.org/licenses/ora/2.3/legalcode.txt)
+is the operative document.
 
-- **Documentation, templates, checklists, guides and diagrams.** Creative
-  Commons Attribution 4.0 International. Use it, adapt it, sell work built on it.
-  Keep the attribution.
-- **Code in `pdf-generator/`.** MIT.
+The short form, which `LICENSE` states and which does not replace that text.
 
-Full terms in [LICENSE](LICENSE).
+- Free at or below USD 20,000,000 annual revenue, and for any individual,
+  nonprofit, school or government body at any size.
+- Above that threshold, 0.5% of the attributable revenue that exceeds it,
+  capped at USD 250,000 per year, self-reported quarterly.
+- AI training on this work needs a separate Compute licence. Reading it,
+  and search indexing, do not.
+- This release does not convert to another licence by lapse of time.
+
+Earlier releases keep the terms they shipped with.
+
+- Before 2026-07-29, the MIT License for the whole repository.
+- From 2026-07-29 to 2026-08-23, CC BY 4.0 for the documentation and the MIT
+  License for `pdf-generator/`.
+- From 2026-08-24 to 2026-08-26, OpenRoots Agent License 1.0, including its
+  2029-08-24 conversion to Apache-2.0.
+- From 2026-08-27, OpenRoots Agent License 2.3.
 
 Suggested attribution.
 
 > Based on the AI Workflow Delivery Framework by Mirza Iqbal, licensed under
-> CC BY 4.0. https://github.com/mjmirza/AI-Workflow-Delivery-Framework
+> the OpenRoots Agent License 2.3.
+> https://github.com/mjmirza/AI-Workflow-Delivery-Framework
 
 ## Not legal advice
 

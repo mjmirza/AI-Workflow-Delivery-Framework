@@ -7,7 +7,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "LicenseRef-OpenRoots-ORA-2.3",
   "description": "",
   "dependencies": {
     "@mermaid-js/mermaid-cli": "^11.12.0"
