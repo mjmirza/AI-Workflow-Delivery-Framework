@@ -69,4 +69,5 @@ If you have questions about contributing:
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the MIT License.
+By contributing, you agree that your contributions are licensed under the
+OpenRoots Agent License 2.3, the licence in [LICENSE](LICENSE).

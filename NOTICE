@@ -1,15 +1,27 @@
-Licensed under the OpenRoots Agent License 1.0 (ORA 1.0).
+AI Workflow Delivery Framework
+Copyright (c) 2025 to 2026 Mirza Iqbal
 
-Effective:    2026-08-24
-Sunset Date:  2029-08-24
-Fallback:     Apache-2.0
-Full text:    https://openroots.org/licenses/ora/1.0
+Licensed under the OpenRoots Agent License 2.3 (ORA 2.3).
+SPDX:        LicenseRef-OpenRoots-ORA-2.3
+Full text:   https://openroots.org/licenses/ora/2.3/legalcode.txt
+Summary:     https://openroots.org/licenses/ora/2.3
 
-On the Sunset Date this release becomes available under Apache-2.0,
-automatically and irrevocably. That date cannot be moved by anyone.
+One licence covers the whole repository, including the documentation
+and the code in pdf-generator/.
 
-Free below USD 2,000,000 annual revenue. Above it, 0.5% of attributable
-revenue, capped at USD 250,000 per year.
+Free for any individual, nonprofit, school, or government body at any
+size, and for any company at or below USD 20,000,000 annual revenue.
+Above that, 0.5% of the attributable revenue that exceeds the
+threshold, capped at USD 250,000 per year, self-reported quarterly.
 
-AI training on this work requires a separate Compute licence.
-See Section 6 of the full text.
+AI training on this work requires a separate Compute licence. Human
+reading and search indexing are unaffected. This release does not
+convert to another licence by lapse of time.
+
+Earlier releases keep the licence they shipped with.
+Releases before 2026-07-29 remain under the MIT License.
+Releases from 2026-07-29 to 2026-08-23 remain under CC BY 4.0 for the
+documentation and the MIT License for pdf-generator/.
+Releases from 2026-08-24 to 2026-08-26 remain under OpenRoots Agent
+License 1.0, including its 2029-08-24 conversion to Apache-2.0.
+Releases from 2026-08-27 are under OpenRoots Agent License 2.3.
